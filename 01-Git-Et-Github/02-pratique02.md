@@ -7,6 +7,11 @@ git status
 git add <votrenom>.txt
 git status
 git commit -m 'ajout du fichier de votre-nom'
-git push
+git push (ne marche pas pour le moment)
 ```
+
+```bash
+ssh-keygen
+```
+
 
