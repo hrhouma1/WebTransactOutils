@@ -41,7 +41,7 @@ Le contenu du fichier `.gitconfig` ressemblera à ceci :
 ## **Étude de cas 1 : Configuration globale**
 
 ### Contexte :
-Ritika est développeuse de logiciels et travaille sur un projet appelé **MyProj** sur son ordinateur portable. Elle utilise Git pour gérer le dépôt de son projet. Ritika souhaite définir son nom et son adresse email dans la configuration globale pour que ses contributions soient correctement enregistrées.
+Haythem est développeuse de logiciels et travaille sur un projet appelé **MyProj** sur son ordinateur portable. Elle utilise Git pour gérer le dépôt de son projet. Haythem souhaite définir son nom et son adresse email dans la configuration globale pour que ses contributions soient correctement enregistrées.
 
 ### Solution :
 1. **Initialiser le dépôt Git pour le projet MyProj** :
@@ -52,7 +52,7 @@ Ritika est développeuse de logiciels et travaille sur un projet appelé **MyPro
 
 2. **Définir le nom de l'auteur et l'email au niveau global** :
    ```bash
-   git config --global user.name "Ritika"
+   git config --global user.name "Haythem"
    git config --global user.email "ritika@gmail.com"
    ```
 
@@ -76,7 +76,7 @@ Ritika est développeuse de logiciels et travaille sur un projet appelé **MyPro
    ```bash
    git log
    ```
-   L'historique montrera l'auteur comme "Ritika" et l'adresse email associée.
+   L'historique montrera l'auteur comme "Haythem" et l'adresse email associée.
 
 ---
 
@@ -110,7 +110,7 @@ Le fichier `.git/config` du projet contiendra :
 ## **Étude de cas 2 : Configuration locale**
 
 ### Contexte :
-Ritika doit désormais travailler sur un serveur de développement où plusieurs développeurs collaborent. Elle ne souhaite pas utiliser la configuration globale, mais préfère définir un nom et une adresse email spécifiques au projet pour que ses contributions soient correctement enregistrées.
+Haythem doit désormais travailler sur un serveur de développement où plusieurs développeurs collaborent. Elle ne souhaite pas utiliser la configuration globale, mais préfère définir un nom et une adresse email spécifiques au projet pour que ses contributions soient correctement enregistrées.
 
 ### Solution :
 1. **Initialiser le dépôt Git pour le projet LocalConfigProj** :
