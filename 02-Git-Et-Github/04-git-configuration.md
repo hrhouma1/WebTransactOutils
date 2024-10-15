@@ -110,7 +110,7 @@ Le fichier `.git/config` du projet contiendra :
 ## **Étude de cas 2 : Configuration locale**
 
 ### Contexte :
-Haythem doit désormais travailler sur un serveur de développement où plusieurs développeurs collaborent. Elle ne souhaite pas utiliser la configuration globale, mais préfère définir un nom et une adresse email spécifiques au projet pour que ses contributions soient correctement enregistrées.
+Haythem doit désormais travailler sur un serveur de développement où plusieurs développeurs collaborent. Il ne souhaite pas utiliser la configuration globale, mais préfère définir un nom et une adresse email spécifiques au projet pour que ses contributions soient correctement enregistrées.
 
 ### Solution :
 1. **Initialiser le dépôt Git pour le projet LocalConfigProj** :
