@@ -41,7 +41,7 @@ Le contenu du fichier `.gitconfig` ressemblera à ceci :
 ## **Étude de cas 1 : Configuration globale**
 
 ### Contexte :
-Haythem est développeuse de logiciels et travaille sur un projet appelé **MyProj** sur son ordinateur portable. Elle utilise Git pour gérer le dépôt de son projet. Haythem souhaite définir son nom et son adresse email dans la configuration globale pour que ses contributions soient correctement enregistrées.
+Haythem est développeur de logiciels et travaille sur un projet appelé **MyProj** sur son ordinateur portable. Il utilise Git pour gérer le dépôt de son projet. Haythem souhaite définir son nom et son adresse email dans la configuration globale pour que ses contributions soient correctement enregistrées.
 
 ### Solution :
 1. **Initialiser le dépôt Git pour le projet MyProj** :
