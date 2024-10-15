@@ -53,7 +53,7 @@ Haythem est développeuse de logiciels et travaille sur un projet appelé **MyPr
 2. **Définir le nom de l'auteur et l'email au niveau global** :
    ```bash
    git config --global user.name "Haythem"
-   git config --global user.email "ritika@gmail.com"
+   git config --global user.email "haythem@gmail.com"
    ```
 
 3. **Créer un fichier de projet** (par exemple, `myfile_1.txt`) :
