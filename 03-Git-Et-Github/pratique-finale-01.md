@@ -1,21 +1,446 @@
+# **TP #1 : La Chasse au Trésor Git — 600 Manipulations**
 
-
-
-
-
-
-
-
-
-------------------
-# Annexe 2
-------------------
-
-
-#1
-Voici l'ensemble des manipulations demandées sous forme de commandes, avec les noms des étudiants associés à chaque section.
+### **Contexte :**
+Vous allez participer à un projet Git collaboratif nommé **"La Chasse au Trésor Git"**. Chaque étudiant va jouer un rôle actif dans la gestion de branches, la création d'énigmes, la résolution de conflits, et bien plus encore, tout en travaillant dans un dépôt partagé. Le but est de manipuler Git de manière approfondie et amusante.
 
 ---
+
+## **Étape 1 : Clonage et configuration initiale (Professeur et Étudiants)**
+
+### **Professeur (moi) :**
+Je vous ai fourni un dépôt GitHub que vous allez cloner sur vos machines pour commencer.
+
+### **Vous faites :**
+
+1. **Tous les étudiants (Léa, Marc, Paul)** : Clonez le dépôt et configurez Git avec vos informations personnelles.
+
+   - **Commandes** :
+     ```bash
+     git clone git@github.com:hrhouma/ChasseAuTresor.git
+     cd ChasseAuTresor
+     git config --global user.name "Votre Nom"
+     git config --global user.email "votre.email@example.com"
+     ```
+
+2. **Vérifiez la connexion SSH à GitHub** :
+
+   ```bash
+   ssh -T git@github.com
+   ```
+
+3. **Vérifiez les branches et l’état du dépôt** :
+
+   ```bash
+   git branch -a
+   git status
+   ```
+
+---
+
+## **Étape 2 : Création des branches locales et des énigmes**
+
+### **Professeur (moi) :**
+Chacun d'entre vous va maintenant créer une branche portant votre nom pour travailler dessus. Vous allez créer une énigme amusante dans un fichier texte qui sera résolu par un autre étudiant.
+
+### **Vous faites :**
+
+1. **Marc crée sa branche et son énigme** :
+   
+   ```bash
+   git checkout -b enigme_Marc
+   echo "Qu’est-ce qui est invisible et qui sent mauvais ?" > Marc.txt
+   git add Marc.txt
+   git commit -m "Ajout de l'énigme de Marc"
+   ```
+
+2. **Léa crée sa branche et son énigme** :
+   
+   ```bash
+   git checkout -b enigme_Lea
+   echo "Je suis un légume, mais je suis aussi une couleur. Qui suis-je ?" > Lea.txt
+   git add Lea.txt
+   git commit -m "Ajout de l'énigme de Léa"
+   ```
+
+3. **Paul crée sa branche et son énigme** :
+   
+   ```bash
+   git checkout -b enigme_Paul
+   echo "Je suis toujours dans le futur mais je n’arrive jamais. Qui suis-je ?" > Paul.txt
+   git add Paul.txt
+   git commit -m "Ajout de l'énigme de Paul"
+   ```
+
+4. **Vérifiez l’historique des commits :**
+
+   ```bash
+   git log --oneline --graph
+   ```
+
+---
+
+## **Étape 3 : Pousser vos branches vers le dépôt distant**
+
+### **Professeur (moi) :**
+Vous allez maintenant pousser vos branches vers le dépôt distant. Ce dépôt contient la branche principale (`main`), et chaque étudiant travaille sur sa propre branche pour éviter les conflits au début.
+
+### **Vous faites :**
+
+1. **Marc pousse sa branche :**
+
+   ```bash
+   git push origin enigme_Marc
+   ```
+
+2. **Léa pousse sa branche :**
+
+   ```bash
+   git push origin enigme_Lea
+   ```
+
+3. **Paul pousse sa branche :**
+
+   ```bash
+   git push origin enigme_Paul
+   ```
+
+4. **Vérifiez les branches distantes :**
+
+   ```bash
+   git branch -r
+   ```
+
+---
+
+## **Étape 4 : Création des Pull Requests (Professeur)**
+
+### **Professeur (moi) :**
+Je vais maintenant fusionner vos branches dans la branche `main`. Vous ne devez pas fusionner directement, mais créer des **pull requests** sur GitHub. Une fois que vous avez créé votre pull request, je vais les examiner et les fusionner.
+
+### **Vous faites :**
+
+1. **Créez une pull request pour votre branche :**
+   - **Marc** : crée une pull request pour `enigme_Marc` sur GitHub.
+   - **Léa** : crée une pull request pour `enigme_Lea` sur GitHub.
+   - **Paul** : crée une pull request pour `enigme_Paul` sur GitHub.
+
+### **Professeur (moi) :**
+Je vais maintenant fusionner chaque pull request après avoir examiné vos modifications. Une fois cela fait, vous devrez mettre à jour vos dépôts locaux.
+
+---
+
+## **Étape 5 : Résolution d'énigmes et commits supplémentaires**
+
+### **Professeur (moi) :**
+Après la fusion de vos branches dans `main`, chacun d’entre vous va résoudre l’énigme d’un autre étudiant, ajouter la réponse dans le fichier correspondant, puis faire un commit.
+
+### **Vous faites :**
+
+1. **Marc résout l'énigme de Léa :**
+   
+   ```bash
+   git checkout main
+   git pull origin main
+   echo "Réponse de Marc : la carotte" >> Lea.txt
+   git add Lea.txt
+   git commit -m "Marc résout l'énigme de Léa"
+   git push origin main
+   ```
+
+2. **Léa résout l'énigme de Paul :**
+   
+   ```bash
+   git checkout main
+   git pull origin main
+   echo "Réponse de Léa : demain" >> Paul.txt
+   git add Paul.txt
+   git commit -m "Léa résout l'énigme de Paul"
+   git push origin main
+   ```
+
+3. **Paul résout l'énigme de Marc :**
+   
+   ```bash
+   git checkout main
+   git pull origin main
+   echo "Réponse de Paul : un pet" >> Marc.txt
+   git add Marc.txt
+   git commit -m "Paul résout l'énigme de Marc"
+   git push origin main
+   ```
+
+---
+
+## **Étape 6 : Scénario de conflit garanti et résolution**
+
+### **Professeur (moi) :**
+Pour vous enseigner comment résoudre des conflits, je vais demander à **Marc** et **Paul** de modifier le même fichier en même temps, ce qui va provoquer un conflit. Vous allez ensuite résoudre ce conflit localement.
+
+### **Vous faites :**
+
+1. **Marc modifie le fichier `Lea.txt` :**
+
+   ```bash
+   git checkout enigme_Marc
+   echo "Nouvelle réponse de Marc : un brocoli" >> Lea.txt
+   git add Lea.txt
+   git commit -m "Marc modifie Lea.txt"
+   git push origin enigme_Marc
+   ```
+
+2. **Paul modifie également le fichier `Lea.txt` :**
+
+   ```bash
+   git checkout enigme_Paul
+   echo "Nouvelle réponse de Paul : un concombre" >> Lea.txt
+   git add Lea.txt
+   git commit -m "Paul modifie Lea.txt"
+   git push origin enigme_Paul
+   ```
+
+3. **Professeur (moi) :** En fusionnant les branches de Marc et Paul dans `main`, un conflit va apparaître. Je vais assigner à **Marc** la tâche de résoudre ce conflit localement.
+
+### **Marc fait :**
+
+1. **Récupérez la dernière version de `main` :**
+
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+
+2. **Fusionnez votre branche avec `main` et détectez le conflit :**
+
+   ```bash
+   git checkout enigme_Marc
+   git merge main
+   # Conflit détecté dans Lea.txt
+   ```
+
+3. **Ouvrez le fichier `Lea.txt`, résolvez manuellement le conflit :**
+
+   ```bash
+   nano Lea.txt
+   ```
+
+4. **Après avoir résolu le conflit, ajoutez et validez :**
+
+   ```bash
+   git add Lea.txt
+   git commit -m "Résolution du conflit dans Lea.txt"
+   git push origin enigme_Marc
+   ```
+
+### **Professeur (moi) :**
+Je vais maintenant examiner le travail de **Marc** pour vérifier si le conflit a bien été résolu et fusionner sa branche dans `main`.
+
+---
+
+## **Étape 7 : Rebase et Squash**
+
+### **Professeur (moi) :**
+Pour garder l’historique des commits propre, nous allons pratiquer le rebase et le squash. Cela vous permettra de combiner plusieurs commits en un seul.
+
+### **Vous faites :**
+
+1. **Marc intègre les changements récents de `main` dans sa branche avec `rebase` :**
+
+   ```bash
+   git checkout enigme_Marc
+   git rebase main
+   ```
+
+2. **Squash : Combinez plusieurs commits en un seul :**
+
+   ```bash
+   git rebase -i HEAD
+   ```
+
+
+
+### **Étape 7 : Rebase et Squash (suite)**
+
+### **Vous faites :**
+
+1. **Marc combine plusieurs commits en un seul (Squash)** :
+   
+   ```bash
+   git rebase -i HEAD~3
+   # Choisissez 'squash' pour les commits que vous voulez combiner
+   ```
+
+   **Note** : Marc va maintenant choisir les trois derniers commits et les combiner en un seul pour simplifier l'historique.
+
+2. **Marc vérifie l'historique des commits après le rebase et le squash** :
+
+   ```bash
+   git log --oneline --graph
+   ```
+
+3. **Léa et Paul font de même pour leurs branches respectives :**
+
+   - **Léa** :
+     ```bash
+     git checkout enigme_Lea
+     git rebase main
+     git rebase -i HEAD~3
+     ```
+
+   - **Paul** :
+     ```bash
+     git checkout enigme_Paul
+     git rebase main
+     git rebase -i HEAD~3
+     ```
+
+4. **Une fois que vous avez terminé le rebase et le squash**, poussez vos branches modifiées sur le dépôt distant :
+
+   - **Marc** :
+     ```bash
+     git push origin enigme_Marc --force
+     ```
+
+   - **Léa** et **Paul** font de même :
+     ```bash
+     git push origin enigme_Lea --force
+     git push origin enigme_Paul --force
+     ```
+
+### **Professeur (moi) :**
+Je vais maintenant examiner vos modifications et vérifier que l’historique des commits est propre après le squash.
+
+---
+
+## **Étape 8 : Utilisation de Git avancée (Stash, Cherry-pick, Tags)**
+
+### **Professeur (moi) :**
+Vous allez maintenant explorer des fonctionnalités avancées comme `stash` pour sauvegarder des modifications temporaires, `cherry-pick` pour appliquer des commits spécifiques d'une branche à une autre, et `tags` pour marquer des versions importantes.
+
+### **Vous faites :**
+
+1. **Sauvegardez vos modifications temporaires avec `git stash` :**
+   
+   - **Marc** :
+     ```bash
+     git checkout enigme_Marc
+     echo "Nouvelle modification temporaire" >> Marc.txt
+     git stash
+     ```
+
+   - **Vérifiez que la modification a été stashed :**
+     ```bash
+     git stash list
+     ```
+
+   - **Restaurez la modification stashed :**
+     ```bash
+     git stash apply
+     git commit -am "Ajout de la modification après restauration du stash"
+     git push origin enigme_Marc
+     ```
+
+2. **Appliquez un commit spécifique à une autre branche avec `cherry-pick` :**
+   
+   - **Paul** veut appliquer un commit spécifique de la branche de Léa :
+     ```bash
+     git checkout enigme_Paul
+     git cherry-pick <commit-hash-de-Lea>
+     ```
+
+   - Une fois le commit appliqué, Paul fait un commit supplémentaire pour valider :
+     ```bash
+     git commit -m "Application du commit de Léa via cherry-pick"
+     git push origin enigme_Paul
+     ```
+
+3. **Créez et poussez des `tags` pour marquer une version stable du projet :**
+
+   - **Marc** marque une version importante de son projet :
+     ```bash
+     git tag -a v1.0 -m "Version stable 1.0 de Marc"
+     git push origin v1.0
+     ```
+
+   - **Léa** et **Paul** créent également leurs tags :
+     ```bash
+     git tag -a v1.0 -m "Version stable 1.0 de Léa"
+     git push origin v1.0
+
+     git tag -a v1.0 -m "Version stable 1.0 de Paul"
+     git push origin v1.0
+     ```
+
+---
+
+## **Étape 9 : Nettoyage et gestion des branches (Avancé)**
+
+### **Professeur (moi) :**
+Maintenant que vous avez terminé la majorité des manipulations, vous allez nettoyer vos branches locales et distantes, et utiliser des fonctionnalités avancées de Git pour explorer davantage.
+
+### **Vous faites :**
+
+1. **Supprimez une branche locale après sa fusion dans `main` :**
+   
+   - **Marc** :
+     ```bash
+     git checkout main
+     git branch -d enigme_Marc
+     ```
+
+   - **Léa** et **Paul** :
+     ```bash
+     git checkout main
+     git branch -d enigme_Lea
+     git branch -d enigme_Paul
+     ```
+
+2. **Supprimez une branche distante après la fusion (optionnel) :**
+   
+   ```bash
+   git push origin --delete enigme_Marc
+   git push origin --delete enigme_Lea
+   git push origin --delete enigme_Paul
+   ```
+
+3. **Utilisez `git reflog` pour examiner tout l’historique des actions :**
+
+   ```bash
+   git reflog
+   ```
+
+4. **Vérifiez l’historique complet du dépôt avec des statistiques :**
+   
+   ```bash
+   git log --stat
+   ```
+
+5. **Examinez les différences entre les branches avant la suppression :**
+   
+   ```bash
+   git diff enigme_Marc main
+   ```
+
+---
+
+## **Conclusion**
+
+Vous avez réalisé **plus de 600 manipulations Git** en couvrant les aspects suivants :
+- Création et gestion des branches, des pull requests et des fusions.
+- Résolution de conflits localement et au niveau du dépôt distant.
+- Utilisation avancée de `rebase`, `squash`, `stash`, `cherry-pick` et `tags`.
+- Nettoyage des branches et gestion avancée de l’historique avec `reflog`.
+
+### **Professeur (moi) :**
+Je vais maintenant faire un dernier récapitulatif et m’assurer que chaque étape a été bien comprise. Vous avez fait un excellent travail à travers ces multiples manipulations. 
+
+
+
+
+
+------------------
+# Annexe 2 - Toutes les commandes
+------------------
+
 
 ### **LEA**
 
@@ -150,10 +575,7 @@ git log --stat
 git diff enigme_Paul main
 ```
 
-#2
-Voici la suite des manipulations avec les rôles de chaque étudiant.
 
----
 
 ### **LEA (suite)**
 
@@ -285,10 +707,6 @@ git commit -m "Résolution du conflit dans Lea.txt"
 git push origin enigme_Marc
 ```
 
-#3
-Voici la suite des manipulations avec les rôles de chaque étudiant.
-
----
 
 ### **LEA (suite)**
 
@@ -426,10 +844,6 @@ git tag -a v1.1 -m "Nouvelle version 1.1 de Paul"
 git push origin v1.1
 ```
 
-#4
-Voici la suite des manipulations avec les rôles de chaque étudiant.
-
----
 
 ### **LEA (suite)**
 
@@ -625,12 +1039,6 @@ git push origin main
 ```
 
 
-#5
-
-Voici la suite des manipulations avec les rôles de chaque étudiant.
-
----
-
 ### **LEA (suite)**
 
 ```bash
@@ -800,17 +1208,13 @@ git reflog
 git status
 ```
 
-#6
-
-
-#7
 
 
 
 
 
 ------------------
-# Annexe 3
+# Annexe 2 - Intervention du professeur
 ------------------
 
 - Le professeur intervient à des moments clés pour superviser, contrôler, et fusionner les pull requests, ainsi que pour créer des scénarios de conflits et guider la résolution.
