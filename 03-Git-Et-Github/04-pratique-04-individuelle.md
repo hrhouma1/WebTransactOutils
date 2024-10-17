@@ -1,16 +1,16 @@
 # **TP : La Chasse au Trésor Git - Plus de 800 Manipulations**
 
-### **Contexte :**
+# **Contexte :**
 Vous allez réaliser un projet Git collaboratif avec vous-même. Vous simulerez deux rôles, local et distant, en réalisant des manipulations sur un dépôt local et un dépôt GitHub. L'objectif est d'apprendre à maîtriser toutes les fonctionnalités de Git tout en réalisant plus de **800 manipulations**.
 
 ---
 
-## **Étape 1 : Clonage du dépôt et configuration initiale**
+# **Étape 1 : Clonage du dépôt et configuration initiale**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Je vous fournis un dépôt GitHub vide que vous allez cloner. Vous commencerez par configurer Git et vérifier votre connexion SSH.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Générez une clé SSH et configurez-la sur GitHub** :
    
@@ -49,12 +49,12 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner. Vous commencerez p
 
 ---
 
-## **Étape 2 : Création de branches et multiples commits**
+# **Étape 2 : Création de branches et multiples commits**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Vous allez maintenant créer plusieurs branches et faire des commits répétitifs. Vous allez répéter ce processus pour générer des manipulations supplémentaires.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Créez une nouvelle branche `dev1` et basculez dessus** :
 
@@ -87,7 +87,7 @@ Vous allez maintenant créer plusieurs branches et faire des commits répétitif
 
 ---
 
-## **Étape 3 : Simulez un conflit (répétition x10)**
+# **Étape 3 : Simulez un conflit (répétition x10)**
 
 ### **Professeur (moi) :**
 Vous allez maintenant simuler un conflit à plusieurs reprises. Vous allez modifier le même fichier dans deux branches différentes et répéter le processus de résolution des conflits pour accumuler des manipulations.
@@ -144,12 +144,12 @@ Vous allez maintenant simuler un conflit à plusieurs reprises. Vous allez modif
 
 ---
 
-## **Étape 4 : Rebase, Squash, et Rebase multiple (répétition x20)**
+# **Étape 4 : Rebase, Squash, et Rebase multiple (répétition x20)**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Vous allez pratiquer des `rebase` sur plusieurs commits en répétant cette opération de manière intensive. Vous utiliserez aussi le `squash` pour combiner des commits.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Créez une nouvelle branche `feature1`** et ajoutez plusieurs commits :
 
@@ -175,12 +175,12 @@ Vous allez pratiquer des `rebase` sur plusieurs commits en répétant cette opé
 
 ---
 
-## **Étape 5 : Git Stash et récupération répétée (répétition x30)**
+# **Étape 5 : Git Stash et récupération répétée (répétition x30)**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Vous allez pratiquer intensivement l'utilisation de `git stash` pour sauvegarder des modifications non committées. Vous effectuerez cette opération plusieurs fois.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Ajoutez des modifications dans des fichiers et stashez-les** :
 
@@ -198,12 +198,12 @@ Vous allez pratiquer intensivement l'utilisation de `git stash` pour sauvegarder
 
 ---
 
-## **Étape 6 : Cherry-pick répétitif et utilisation de tags (répétition x20)**
+# **Étape 6 : Cherry-pick répétitif et utilisation de tags (répétition x20)**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Vous allez pratiquer le `cherry-pick` sur des commits spécifiques, ainsi que la gestion de tags de version, plusieurs fois.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Appliquez des commits spécifiques d'une branche à une autre avec `cherry-pick`** :
 
@@ -224,12 +224,12 @@ Vous allez pratiquer le `cherry-pick` sur des commits spécifiques, ainsi que la
 
 ---
 
-## **Étape 7 : Nettoyage des branches, suppression et finalisation**
+# **Étape 7 : Nettoyage des branches, suppression et finalisation**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Vous allez maintenant nettoyer vos branches locales et distantes. Cette étape est importante pour maintenir un dépôt propre.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Supprimez des branches locales après fusion** :
 
@@ -256,7 +256,7 @@ Vous allez maintenant nettoyer vos branches locales et distantes. Cette étape e
 
 ---
 
-## **Conclusion :**
+# **Conclusion :**
 
 Vous avez réalisé **plus de 800 manipulations Git** en couvrant :
 - La gestion des branches, commits, push, et pulls.
