@@ -59,10 +59,6 @@
 
 ![image](https://github.com/user-attachments/assets/309d151e-d595-4e03-9364-d8bbbdab2ff4)
 
-# ici
-![image](https://github.com/user-attachments/assets/3e9d55ad-9d36-4b87-bf68-77d652645a0f)
-
-![image](https://github.com/user-attachments/assets/ead22522-b62c-4c50-8fd4-1e4ef88ff4b8)
 
 ![image](https://github.com/user-attachments/assets/43b0882e-1a71-46d9-bad8-33c14b201ac4)
 
