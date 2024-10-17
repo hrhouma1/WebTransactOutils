@@ -1,4 +1,4 @@
-# **TP #1 : La Chasse au Trésor Git — 600 Manipulations**
+# **TP #2 : La Chasse au Trésor Git — 600 Manipulations**
 
 ### **Contexte :**
 Vous allez participer à un projet Git collaboratif nommé **"La Chasse au Trésor Git"**. Chaque étudiant va jouer un rôle actif dans la gestion de branches, la création d'énigmes, la résolution de conflits, et bien plus encore, tout en travaillant dans un dépôt partagé. Le but est de manipuler Git de manière approfondie et amusante.
