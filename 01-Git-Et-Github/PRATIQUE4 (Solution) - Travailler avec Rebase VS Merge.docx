@@ -1,2 +1,81 @@
-# Référence :
+----------------------
+# Note et références:
+----------------------
+
+- Ce tutoriel est basé sur les concepts expliqués par Amit Prajapati dans son article original.
 - https://medium.com/mindorks/understanding-git-merge-git-rebase-88e2afd42671
+
+
+## Comprendre **Git Merge** et **Git Rebase**
+
+### **Motivation d'aujourd'hui :**
+
+*"Le progrès est impossible sans changement et ceux qui ne peuvent pas changer d'avis ne peuvent rien changer."*
+
+Commençons ! 😊
+
+---
+
+### **Quelle est l'utilité de `git merge` ?**
+
+Séparer les fonctionnalités dans différentes branches est une pratique essentielle pour tout développeur sérieux. En séparant chaque fonctionnalité, correction de bug, ou expérimentation, vous éviterez de nombreux problèmes et garderez vos branches de développement propres.
+
+À un moment donné, une partie du code atteindra un état où vous voudrez l'intégrer avec le reste du projet. C'est là que la commande `git merge` entre en jeu.
+
+---
+
+### **Préparation à la fusion**
+
+Supposons que vous voulez fusionner la branche `hotfix` dans votre branche `master`. Voici comment vous assurer que vous êtes prêt à effectuer cette fusion :
+
+1. **Mettre à jour votre dépôt local** : Vérifiez si votre dépôt local est à jour avec les derniers changements du serveur distant en utilisant `git fetch`.
+2. **Passer à la branche `master`** : Une fois la mise à jour effectuée, faites un `git checkout master` pour vous assurer que vous travaillez sur la bonne branche.
+3. **Récupérer les dernières mises à jour** : Exécutez `git pull` pour vous assurer que la branche `master` contient bien les dernières mises à jour.
+4. **Fusionner les branches** : Utilisez `git merge <nom_branche>` pour intégrer les modifications de la branche `hotfix` dans `master`.
+
+---
+
+### **Fusion rapide (Fast-forward Merge)**
+
+Une fusion rapide peut se produire lorsqu'il existe un chemin linéaire entre les branches que vous souhaitez fusionner. Si la branche `master` n'a pas divergé, au lieu de créer un nouveau commit, Git fera simplement pointer la branche `master` vers le dernier commit de la branche `hotfix`.
+
+### **Fusion à trois voies (Three-way Merge)**
+
+Lorsque les branches ont divergé, Git n'a pas d'autre choix que de combiner les branches via une fusion à trois voies. Cette fusion utilise un commit supplémentaire pour relier les deux branches.
+
+---
+
+### **Comment résoudre les conflits de fusion**
+
+Un conflit de fusion se produit lorsque deux branches que vous essayez de fusionner ont modifié la même partie du même fichier. Git ne pourra pas déterminer quelle version utiliser. Voici comment résoudre un conflit de fusion :
+
+1. **Ouvrir le fichier en conflit** : Lorsque vous essayez de fusionner les branches, Git marque les zones conflictuelles avec des indicateurs visuels :
+   - `<<<<<<<` : Indicateur de début de conflit.
+   - `=======` : Sépare vos changements de ceux de l'autre branche.
+   - `>>>>>>>` : Indique la fin des lignes en conflit.
+
+2. **Résoudre le conflit manuellement** : Décidez si vous voulez conserver uniquement vos changements ou ceux de l'autre branche, ou bien écrire du code entièrement nouveau. Ensuite, supprimez les marqueurs de conflit.
+
+3. **Appliquer et committer les changements** : Après avoir résolu les conflits, utilisez `git add <fichier>` pour dire à Git que les conflits sont résolus, puis créez un commit avec `git commit`.
+
+---
+
+### **Meilleure pratique avec `git rebase`**
+
+L'objectif du **merge** et du **rebase** est le même : prendre des commits d'une branche de fonctionnalité et les appliquer à une autre branche. Cependant, le rebase permet de "rejouer" les commits d'une branche sur une autre, créant ainsi un historique plus linéaire.
+
+---
+
+### **La règle d'or du rebase**
+
+La règle d'or du **rebase** est de **ne jamais l'utiliser sur des branches publiques**. En effet, le rebase réécrit l'historique des commits, ce qui peut entraîner des divergences avec d'autres développeurs travaillant sur les mêmes branches.
+
+---
+
+### **Conclusion**
+
+Dans ce tutoriel, nous avons couvert les notions essentielles de **Git merge** et **Git rebase**, ainsi que la gestion des conflits de fusion. Le merge est une manière plus simple de combiner des branches, mais le rebase permet de maintenir un historique propre et linéaire. Assurez-vous de bien comprendre les différences entre ces deux approches avant de les utiliser dans vos projets.
+
+Si vous avez trouvé ce tutoriel utile, partagez-le et mettez-le en pratique dans vos projets pour mieux maîtriser ces concepts.
+
+
