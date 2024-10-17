@@ -1,6 +1,8 @@
 -------------------------------------
 # 02 git installation
 -------------------------------------
+# Référence :
+- https://phoenixnap.com/kb/how-to-install-git-windows
 
 # **Étapes d'installation de Git**
 
@@ -16,6 +18,8 @@ Git est un **système de contrôle de version** distribué qui permet de suivre 
 ### Étape 2 : Installation de Git
 1. Une fois le fichier téléchargé, ouvrez-le pour lancer l'installation.
 2. Suivez les instructions de l'installateur et acceptez les paramètres par défaut, sauf si vous avez des exigences spécifiques.
+
+# https://phoenixnap.com/kb/how-to-install-git-windows
 
 ### Étape 3 : Vérification de l'installation de Git Bash
 - Après l'installation, vous devriez voir l'option **Git Bash** dans votre menu contextuel (clic droit sur l'écran de votre bureau ou dans un répertoire).
