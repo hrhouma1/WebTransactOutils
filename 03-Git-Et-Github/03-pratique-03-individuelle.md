@@ -1,16 +1,16 @@
-# **TP : La Chasse au Trésor Git - 800 Manipulations**
+# **TP : La Chasse au Trésor Git**
 
-### **Contexte :**
+# **Contexte :**
 Dans ce projet, chaque étudiant va travailler de manière autonome sur un dépôt Git individuel. Ils vont simuler une collaboration entre un contributeur local (eux-mêmes) et un autre contributeur distant (leur propre dépôt GitHub) pour réaliser toutes les manipulations Git. Vous jouerez donc deux rôles : **vous-même localement** et **vous-même sur GitHub**.
 
 ---
 
-## **Étape 1 : Configuration initiale et génération de clé SSH (Professeur et Étudiant)**
+# **Étape 1 : Configuration initiale et génération de clé SSH (Professeur et Étudiant)**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. Vous allez aussi configurer Git et générer votre clé SSH pour authentifier vos actions avec GitHub.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Générez une clé SSH** pour interagir avec GitHub via SSH :
    
@@ -28,6 +28,8 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
    cd monsupersite
    git config --global user.name "Votre Nom"
    git config --global user.email "votre.email@example.com"
+   git config --local user.name "Votre Nom"
+   git config --local user.email "votre.email@example.com"
    ```
 
 3. **Vérifiez la connexion SSH à GitHub** :
@@ -44,12 +46,12 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
 
 ---
 
-## **Étape 2 : Simulation de collaboration (Local vs GitHub)**
+# **Étape 2 : Simulation de collaboration (Local vs GitHub)**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Vous allez maintenant créer une branche localement, ajouter des fichiers, et les committer, comme si vous travailliez avec une autre personne distante (GitHub). Vous allez pousser les changements vers GitHub, puis simuler des modifications à distance, comme si une autre personne travaillait sur le même dépôt.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Créez un fichier sur votre dépôt local et ajoutez-le au staging** :
 
@@ -79,12 +81,12 @@ Vous allez maintenant créer une branche localement, ajouter des fichiers, et le
 
 ---
 
-## **Étape 3 : Récupération et fusion des modifications distantes (Local)**
+# **Étape 3 : Récupération et fusion des modifications distantes (Local)**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Maintenant, vous allez récupérer les modifications que vous avez simulées sur GitHub, comme si une autre personne avait travaillé à distance. Vous allez les fusionner avec vos modifications locales.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Récupérez les modifications distantes** :
 
@@ -118,12 +120,12 @@ Maintenant, vous allez récupérer les modifications que vous avez simulées sur
 
 ---
 
-## **Étape 4 : Création et gestion des branches locales et distantes**
+# **Étape 4 : Création et gestion des branches locales et distantes**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Vous allez maintenant créer des branches localement et les pousser vers GitHub. Cela vous permettra de simuler la gestion de plusieurs fonctionnalités sur des branches séparées, comme si vous travailliez en équipe avec un autre contributeur.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Créez une nouvelle branche localement** :
 
@@ -166,12 +168,12 @@ Vous allez maintenant créer des branches localement et les pousser vers GitHub.
 
 ---
 
-## **Étape 5 : Simulation de conflits et résolution**
+# **Étape 5 : Simulation de conflits et résolution**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Vous allez maintenant simuler des conflits en modifiant le même fichier localement et sur GitHub. Vous allez résoudre ces conflits manuellement.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Modifiez le fichier `enigme.txt` localement** :
 
@@ -203,12 +205,12 @@ Vous allez maintenant simuler des conflits en modifiant le même fichier localem
 
 ---
 
-## **Étape 6 : Rebase, Squash, et Cherry-pick**
+# **Étape 6 : Rebase, Squash, et Cherry-pick**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Pour garder un historique Git propre, vous allez pratiquer le `rebase`, le `squash` et utiliser `cherry-pick` pour appliquer des commits spécifiques d'une branche à une autre.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Rebase votre branche `enigme_VotreNom` sur `main`** :
 
@@ -235,12 +237,12 @@ Pour garder un historique Git propre, vous allez pratiquer le `rebase`, le `squa
 
 ---
 
-## **Étape 7 : Stash, Tags, et nettoyage des branches**
+# **Étape 7 : Stash, Tags, et nettoyage des branches**
 
-### **Professeur (moi) :**
+## **Professeur (moi) :**
 Pour gérer efficacement vos modifications temporaires et marquer des versions importantes, vous allez utiliser `git stash` et créer des tags de version.
 
-### **Vous faites :**
+## **Vous faites :**
 
 1. **Utilisez `git stash` pour sauvegarder des modifications temporaires** :
 
@@ -256,9 +258,7 @@ Pour gérer efficacement vos modifications temporaires et marquer des versions i
    ```bash
    git stash apply
    git add temporaire.txt
-   git commit -m "Aj
-
-out de la modification après restauration du stash"
+   git commit -m "Ajout de la modification après restauration du stash"
    git push origin enigme_VotreNom
    ```
 
@@ -279,9 +279,9 @@ out de la modification après restauration du stash"
 
 ---
 
-## **Conclusion :**
+# **Conclusion :**
 
-En réalisant ces étapes, vous aurez complété **plus de 800 manipulations Git**, en couvrant les aspects suivants :
+En réalisant ces étapes, vous aurez complété les aspects suivants :
 - Clonage, configuration, et gestion des clés SSH.
 - Création et fusion de branches locales et distantes.
 - Simulation de conflits et résolution manuelle.
