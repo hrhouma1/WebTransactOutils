@@ -1,7 +1,3 @@
-Je comprends bien maintenant ! Je vais te donner des instructions ultra détaillées, étape par étape, pour que les étudiants novices puissent suivre sans problème, en expliquant ce qu'ils doivent faire à chaque étape avant de leur donner les commandes Git. Voici une version plus exhaustive du guide.
-
----
-
 # **Ajax CRUD Operation using PDO with Bootstrap/Modal**
 
 ## **Commandes de Workflow Git**
