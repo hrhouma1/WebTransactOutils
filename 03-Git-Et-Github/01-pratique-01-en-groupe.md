@@ -10,7 +10,7 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Étape 1 : Clonage du dépôt et configuration initiale (20 manipulations)**
+# **Étape 1 : Clonage du dépôt et configuration initiale (20 manipulations)**
 
 1. **Tous les étudiants :** Commencez par cloner le dépôt GitHub sur vos machines locales.
    
@@ -47,7 +47,7 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Étape 2 : Création et gestion des branches (30 manipulations)**
+# **Étape 2 : Création et gestion des branches (30 manipulations)**
 
 1. **Chaque étudiant crée une nouvelle branche pour son énigme :**
 
@@ -83,7 +83,7 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Étape 3 : Création des énigmes et commit initial (40 manipulations)**
+# **Étape 3 : Création des énigmes et commit initial (40 manipulations)**
 
 1. **Créez un fichier texte pour votre énigme :**
 
@@ -125,7 +125,7 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Étape 4 : Pousser votre branche et créer une Pull Request (20 manipulations)**
+# **Étape 4 : Pousser votre branche et créer une Pull Request (20 manipulations)**
 
 1. **Poussez votre branche sur le dépôt distant :**
 
@@ -152,7 +152,7 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Étape 5 : Synchronisation avec le dépôt (30 manipulations)**
+# **Étape 5 : Synchronisation avec le dépôt (30 manipulations)**
 
 1. **Mettez à jour votre dépôt local avec les dernières modifications de `main` :**
 
@@ -183,7 +183,7 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Étape 6 : Résolution d'énigmes et ajout de réponses (20 manipulations)**
+# **Étape 6 : Résolution d'énigmes et ajout de réponses (20 manipulations)**
 
 1. **Chaque étudiant résout une énigme créée par un camarade.**
 
@@ -209,7 +209,7 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Étape 7 : Gestion des conflits (30 manipulations)**
+# **Étape 7 : Gestion des conflits (30 manipulations)**
 
 1. **Création d’un conflit garanti :**
 
@@ -280,7 +280,7 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Étape 9 : Utilisation avancée de Git (30 manipulations)**
+# **Étape 9 : Utilisation avancée de Git (30 manipulations)**
 
 1. **Utilisation de `git stash` :** Sauvegardez temporairement votre travail sans faire de commit.
    
@@ -311,7 +311,7 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Étape 10 : Conclusion et bonnes pratiques (20 manipulations)**
+# **Étape 10 : Conclusion et bonnes pratiques (20 manipulations)**
 
 
 
@@ -342,6 +342,6 @@ Vous allez travailler sur un dépôt partagé où chaque étudiant crée une én
 
 ---
 
-## **Objectif atteint : 200 manipulations Git**
+# **Objectif atteint : 200 manipulations Git**
 
 À travers cet exercice, vous avez appris à utiliser Git de manière collaborative, en réalisant au moins 200 manipulations. Vous avez exploré les branches, les conflits, les pull requests, le rebase, et bien plus encore.
