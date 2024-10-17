@@ -1,4 +1,4 @@
-# **TP : La Chasse au Trésor Git - Plus de 800 Manipulations**
+# **TP #4: La Chasse au Trésor Git - Plus de 800 Manipulations**
 
 # **Contexte :**
 Vous allez réaliser un projet Git collaboratif avec vous-même. Vous simulerez deux rôles, local et distant, en réalisant des manipulations sur un dépôt local et un dépôt GitHub. L'objectif est d'apprendre à maîtriser toutes les fonctionnalités de Git tout en réalisant plus de **800 manipulations**.
