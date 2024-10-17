@@ -1,4 +1,4 @@
-# **TP : La Chasse au Trésor Git**
+# **TP #2 : La Chasse au Trésor Git**
 
 # **Contexte :**
 Dans ce projet, chaque étudiant va travailler de manière autonome sur un dépôt Git individuel. Ils vont simuler une collaboration entre un contributeur local (eux-mêmes) et un autre contributeur distant (leur propre dépôt GitHub) pour réaliser toutes les manipulations Git. Vous jouerez donc deux rôles : **vous-même localement** et **vous-même sur GitHub**.
