@@ -119,3 +119,90 @@ Une fois que toutes les branches ont un upstream configuré, vous pourrez utilis
 Dans **GitKraken**, après avoir créé de nouvelles branches, vous pouvez également sélectionner manuellement chaque branche et utiliser l'option "Push" avec l'upstream, puis passer à la branche suivante pour faire de même.
 
 
+
+
+
+
+
+
+
+----------------
+# Annexe 2 - commande sed
+-----------------
+
+
+La commande `sed 's/\*//'` utilise `sed` (stream editor) pour modifier un flux de texte en appliquant une expression régulière. Décomposons cette commande :
+
+1. **`sed`** : C'est un outil de manipulation de texte qui permet d'effectuer des recherches, des remplacements, des suppressions ou des insertions sur des fichiers ou des flux de texte.
+
+2. **`s`** : C'est la commande de substitution dans `sed`. Elle indique que tu souhaites remplacer une chaîne de caractères par une autre.
+
+3. **`*`** : C'est le caractère `*` (étoile) qui est recherché dans le texte. Ici, il n'est pas un caractère spécial (comme il le serait dans une expression régulière sans échappement) car il est seul et non précédé d'un autre caractère.
+
+4. **`//`** : Cela signifie que tu veux remplacer le caractère `*` par "rien", c'est-à-dire que tu veux supprimer chaque étoile rencontrée dans le texte.
+
+### Exemple :
+Si tu exécutes cette commande sur un fichier ou un texte contenant des étoiles :
+
+```bash
+echo "Hello *world*!" | sed 's/\*//g'
+```
+
+Résultat :
+```
+Hello world!
+```
+
+L'option `g` peut être ajoutée à la fin de la commande pour que la substitution soit faite globalement, c'est-à-dire sur toutes les occurrences du caractère dans chaque ligne.
+
+
+--------------------
+
+# Annexe 3 - explication de vfor branch in $(git branch | sed 's/\*//'); do
+----------------------
+
+   ```bash
+   for branch in $(git branch | sed 's/\*//'); do
+     git push --set-upstream origin $branch
+   done
+   ```
+
+Cette commande Bash utilise une boucle `for` pour automatiser l'opération de "push" de plusieurs branches Git sur le dépôt distant `origin`. Voici une explication détaillée de chaque partie :
+
+### 1. **`for branch in $(git branch | sed 's/\*//')`**
+- **`git branch`** : Cette commande liste toutes les branches locales de ton dépôt Git. Une branche locale active est précédée par un astérisque `*` dans la liste.
+  
+- **`sed 's/\*//'`** : Ici, `sed` est utilisé pour supprimer l'astérisque `*` (qui indique la branche active) des résultats. Cela permet d'obtenir simplement le nom des branches sans marquer la branche active avec `*`.  
+  Par exemple, si tu as deux branches :
+  ```
+  * main
+    feature1
+  ```
+  Après l'application de `sed`, cela deviendra :
+  ```
+   main
+   feature1
+  ```
+
+- **`$(...)`** : Cela exécute la commande à l'intérieur et renvoie sa sortie. Ainsi, `$(git branch | sed 's/\*//')` renverra une liste des noms de toutes les branches locales sans l'astérisque. 
+
+- **`for branch in ...`** : La boucle `for` itère sur chaque branche listée, en assignant le nom de la branche actuelle à la variable `branch` à chaque itération.
+
+### 2. **`do git push --set-upstream origin $branch`**
+- **`git push --set-upstream origin $branch`** : Pour chaque branche dans la liste générée précédemment, cette commande :
+  - Envoie (`push`) la branche courante vers le dépôt distant nommé `origin`.
+  - Utilise l'option `--set-upstream` pour lier la branche locale au dépôt distant `origin/$branch`, de sorte que lors des prochains "push" ou "pull", Git saura automatiquement vers quelle branche du dépôt distant pousser ou récupérer les modifications.
+
+### 3. **`done`**
+- **`done`** : Cela termine la boucle `for`. Une fois toutes les branches parcourues, la boucle s'arrête.
+
+### En résumé
+Cette commande parcourt toutes les branches locales (en retirant l'éventuel astérisque qui marque la branche active), puis pour chaque branche, elle exécute `git push --set-upstream origin $branch` afin d'envoyer la branche locale vers le dépôt distant `origin` et de configurer l'upstream pour faciliter les prochaines synchronisations.
+
+### Exemple de fonctionnement :
+Si tu as deux branches locales `main` et `feature1`, la boucle va effectuer :
+- `git push --set-upstream origin main`
+- `git push --set-upstream origin feature1`
+
+Cela configure ainsi chaque branche pour être correctement synchronisée avec son homologue sur le dépôt distant `origin`.
+
