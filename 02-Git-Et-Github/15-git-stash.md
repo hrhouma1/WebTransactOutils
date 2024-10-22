@@ -112,8 +112,13 @@ Lorsque vous êtes prêt à récupérer les modifications que vous avez mises de
    ```
 
    Cette commande réapplique les modifications depuis le stash et les supprime de la pile de stashes.
+   
+![image](https://github.com/user-attachments/assets/f29688a0-a92e-49f6-923f-5fdb9a6c752f)
 
-2. **Vérifier les modifications** :
+- https://www.programiz.com/dsa/stack
+   
+
+3. **Vérifier les modifications** :
 
    Tapez `git status` pour vérifier que les modifications dans `app.js` et `index.php` ont bien été restaurées. Vous devriez voir que les fichiers sont à nouveau modifiés mais non ajoutés à la zone de staging.
 
