@@ -237,3 +237,63 @@ Si vous voulez taguer un commit particulier (pas le dernier), vous pouvez spéci
 Ce guide vous a montré comment utiliser **`git tag`** pour marquer des points spécifiques dans l'historique de votre projet. Vous avez appris à créer des tags légers et annotés, à les pousser vers GitHub, et à les supprimer si nécessaire. Les tags sont particulièrement utiles pour suivre les versions de votre projet et indiquer les releases importantes.
 
 En utilisant les tags, vous pouvez facilement naviguer dans l'historique de votre projet et revenir à des versions spécifiques pour des déploiements ou des corrections de bugs.
+
+-----------
+# Annexe 1 :  Gérer les tags à distance (remote) :
+-----------
+
+### **Lister les tags à distance :**
+```bash
+git ls-remote --tags origin
+```
+
+### **Pousser un tag spécifique vers le dépôt distant :**
+```bash
+git push origin <nom_du_tag>
+```
+
+### **Pousser tous les tags vers le dépôt distant :**
+```bash
+git push origin --tags
+```
+
+### **Supprimer un tag à distance :**
+```bash
+git push origin --delete <nom_du_tag>
+```
+
+### **Récupérer les tags à partir du dépôt distant :**
+```bash
+git fetch --tags
+```
+
+
+-----------
+# Annexe 2 :  Gérer les tags à distance (remote) dans une branche spécifique :
+-----------
+
+
+*Git ne permet pas directement de lister les **tags** par branche, car les **tags** sont globaux et non spécifiques à une branche. Cependant, voici une méthode pour lister les tags associés à une branche spécifique ainsi que pour récupérer les branches avec `git fetch`.*
+
+### **Lister les tags dans une branche spécifique :**
+Pour afficher les tags dans une branche spécifique, utilisez cette combinaison de commandes :
+
+```bash
+git log --oneline --decorate --tags --simplify-by-decoration <nom_de_branche>
+```
+
+Cela affichera les commits de la branche spécifiée avec les tags associés.
+
+### **Lister toutes les branches et récupérer les informations à distance :**
+
+1. **Récupérer toutes les branches et les tags avec `fetch` :**
+   ```bash
+   git fetch --all --tags
+   ```
+
+2. **Lister toutes les branches distantes :**
+   ```bash
+   git branch -r
+   ```
+
+Ces commandes vous permettent de gérer les tags et branches à distance efficacement.
