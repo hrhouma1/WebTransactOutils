@@ -22,12 +22,11 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
    git clone https://github.com/hrhouma1/monsupersite.git
    # SINON POUR CLONER EN SSH
    # git clone git@github.com:hrhouma1/monsupersite.git
-   
    cd monsupersite
-   git config --global user.name "Votre Nom"
-   git config --global user.email "votre.email@example.com"
-   git config --local user.name "Votre Nom"
-   git config --local user.email "votre.email@example.com"
+   git config --global user.name "hrhouma1"
+   git config --global user.email "rhoumahaythem@gmail.com"
+   git config --local user.name "hrhouma1"
+   git config --local user.email "rhoumahaythem@gmail.com"
    ```
 # À DISTANCE (VOTRE GITHUB)
 2. **Créez un dossier dans votre Github et appelez le monsupersite** (cochez le readme.md)
