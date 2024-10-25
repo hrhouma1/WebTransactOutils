@@ -27,7 +27,7 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
    git config --local user.email "votre.email@example.com"
    ```
 # À DISTANCE (VOTRE GITHUB)
-2. **Créez un dossier dans votre Github et appelez le monsupersite**
+2. **Créez un dossier dans votre Github et appelez le monsupersite** (cochez le readme.md)
 
 # EN LOCAL
 3. **Générez une clé SSH** pour interagir avec GitHub via SSH :
