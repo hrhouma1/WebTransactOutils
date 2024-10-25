@@ -12,16 +12,9 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
 
 ## **Vous faites :**
 
-1. **Générez une clé SSH** pour interagir avec GitHub via SSH :
-   
-   - **Commandes** :
-     ```bash
-     ssh-keygen -t rsa -b 4096 -C "votre.email@example.com"
-     ```
 
-   - Copiez la clé publique SSH dans votre compte GitHub (Paramètres > SSH et GPG Keys > Ajouter une nouvelle clé SSH).
-
-2. **Clonez le dépôt sur votre machine locale** et configurez vos informations Git :
+# EN LOCAL
+1. **Clonez le dépôt sur votre machine locale** et configurez vos informations Git :
    
    ```bash
    git clone git@github.com:hrhouma1/monsupersite.git
@@ -31,13 +24,26 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
    git config --local user.name "Votre Nom"
    git config --local user.email "votre.email@example.com"
    ```
+# À DISTANCE (VOTRE GITHUB)
+2. **Créez un dossier dans votre Github et appelez le monsupersite**
 
-3. **Vérifiez la connexion SSH à GitHub** :
+# EN LOCAL
+3. **Générez une clé SSH** pour interagir avec GitHub via SSH :
+   
+   - **Commandes** :
+     ```bash
+     ssh-keygen -t rsa -b 4096 -C "votre.email@example.com"
+     ```
+# À DISTANCE (VOTRE GITHUB)
+   - Copiez la clé publique SSH dans votre compte GitHub (Paramètres > SSH et GPG Keys > Ajouter une nouvelle clé SSH).
+
+# EN LOCAL
+4. **Vérifiez la connexion SSH à GitHub** :
 
    ```bash
    ssh -T git@github.com
    ```
-
+# EN LOCAL
 4. **Vérifiez l'état de votre dépôt** :
 
    ```bash
