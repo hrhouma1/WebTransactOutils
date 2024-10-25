@@ -19,7 +19,7 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
 1. **Clonez le dépôt sur votre machine locale** et configurez vos informations Git :
    
    ```bash
-   git clone git@github.com:hrhouma1/monsupersite.git
+   git clone git@github.com:hrhouma1/monsupersite.git (sinon git clone https://github.com/hrhouma1/monsupersite.git)
    cd monsupersite
    git config --global user.name "Votre Nom"
    git config --global user.email "votre.email@example.com"
