@@ -52,7 +52,7 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
 ##### git clone git@github.com:hrhouma1/monsupersite.git devient ===> git clone https://github.com/hrhouma1/WebTransactOutils.git
 
    ```bash
-   git clone git@github.com:hrhouma1/monsupersite.git
+   git clone https://github.com/hrhouma1/WebTransactOutils.git
    cd monsupersite
    git config --global user.name "Votre Nom"
    git config --global user.email "votre.email@example.com"
