@@ -42,12 +42,12 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
 # EN LOCAL
 4. **Modifiez votre .cat/config**
 
-*Remplacez le champ ci-bas (git@github.com:hrhouma1/monsupersite.git) par votre adresse ssh récupérée depuis votre Github*
+*Remplacez le champ ci-bas (**figure1**) (git@github.com:hrhouma1/monsupersite.git) par votre adresse ssh récupérée depuis votre Github* (**Voir figure2**)
 
-Modifiez ce fichier
+Modifiez ce fichier (**figure1**)
 ![image](https://github.com/user-attachments/assets/f02f07d9-9adf-4026-8551-b45686c54ea9)
 
-L'adresse peut être récupée de cette façon :
+L'adresse peut être récupée de cette façon  (**figure2**):
 
 ![image](https://github.com/user-attachments/assets/885117f5-b567-4fac-94b2-7c51106d92c9)
 
