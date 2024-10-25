@@ -37,14 +37,27 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
 # À DISTANCE (VOTRE GITHUB)
    - Copiez la clé publique SSH dans votre compte GitHub (Paramètres > SSH et GPG Keys > Ajouter une nouvelle clé SSH).
 
+
+6. **Modifiez votre .cat/config**
+
+*Remplacez le champ ci-bas (git@github.com:hrhouma1/monsupersite.git) par votre adresse ssh récupérée depuis votre Github*
+
+Modifiez ce fichier
+![image](https://github.com/user-attachments/assets/f02f07d9-9adf-4026-8551-b45686c54ea9)
+
+L'adresse peut être récupée de cette façon :
+
+![image](https://github.com/user-attachments/assets/885117f5-b567-4fac-94b2-7c51106d92c9)
+
+
 # EN LOCAL
-4. **Vérifiez la connexion SSH à GitHub** :
+5. **Vérifiez la connexion SSH à GitHub** :
 
    ```bash
    ssh -T git@github.com
    ```
 # EN LOCAL
-4. **Vérifiez l'état de votre dépôt** :
+6. **Vérifiez l'état de votre dépôt** :
 
    ```bash
    git status
