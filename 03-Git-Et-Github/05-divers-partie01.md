@@ -183,3 +183,24 @@ Dans cet exercice, vous allez apprendre à restaurer un dossier entier supprimé
 1. **Décrivez les étapes que vous avez suivies pour restaurer le dossier.**
 2. **Pourquoi cette méthode est-elle utile dans un projet collaboratif ?**
 
+
+
+----------
+# Annexe 1 : Récupération d’un Dossier Supprimé Avant le Clonage
+----------
+
+#### Question
+Si le dossier est supprimé dans le dépôt **avant** que vous ne fassiez votre premier clonage, pourrez-vous voir l’historique des suppressions et accéder aux versions précédentes de ce dossier dans votre copie locale ?
+
+#### Réponse
+Non, si le dossier est supprimé avant votre clonage, vous ne pourrez **pas accéder aux commits ni à l’historique** contenant ce dossier, car votre copie locale ne reflétera que l’état actuel du dépôt. Vous n’aurez donc pas accès aux commits précédant la suppression, ce qui vous empêchera de récupérer ce dossier.
+
+Pour que vous puissiez récupérer un dossier supprimé en consultant l’historique, nous utiliserons l’une des méthodes suivantes :
+
+1. **Suppression du dossier après votre clonage initial** : 
+   - Je créerai le dépôt avec le dossier en place, puis vous clonerez le dépôt. Une fois cela fait, je supprimerai le dossier et pousserai cette modification. De cette façon, vous pourrez accéder aux commits précédents pour récupérer le dossier supprimé.
+
+2. **Utilisation de branches** :
+   - Je garderai une branche dans laquelle le dossier est présent. Vous pourrez ainsi cloner cette branche et récupérer le dossier si besoin. 
+
+Ces méthodes vous permettront d’accéder à l’historique complet et de restaurer les éléments nécessaires.
