@@ -44,6 +44,28 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
    git status
    ```
 
+
+## Remraque optionnelle : 
+
+- Supposons que vous avez cloné le projet avec https et non pas git (ssh)
+
+##### git clone git@github.com:hrhouma1/monsupersite.git devient ===> git clone https://github.com/hrhouma1/WebTransactOutils.git
+
+   ```bash
+   git clone git@github.com:hrhouma1/monsupersite.git
+   cd monsupersite
+   git config --global user.name "Votre Nom"
+   git config --global user.email "votre.email@example.com"
+   git config --local user.name "Votre Nom"
+   git config --local user.email "votre.email@example.com"
+   ```
+
+#### Dans ce cas, il faut changer le .git/config manuellement ou avec nano en remplaçant le champ url comme illustré ici :
+
+![image](https://github.com/user-attachments/assets/f02f07d9-9adf-4026-8551-b45686c54ea9)
+
+
+
 ---
 
 # **Étape 2 : Simulation de collaboration (Local vs GitHub)**
