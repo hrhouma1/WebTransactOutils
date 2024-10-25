@@ -69,7 +69,7 @@ si vous avez l'erreur suivante !
 ![image](https://github.com/user-attachments/assets/3b5cd0dc-c637-443a-b7ef-b7980fda0b39)
 Il faut tout simplement utiliser le https à la place et le modifier ultérieurement dans votre .cat/config
 
-##### git clone git@github.com:hrhouma1/monsupersite.git devient ===> git clone https://github.com/hrhouma1/WebTransactOutils.git
+## git clone git@github.com:hrhouma1/monsupersite.git devient ===> git clone https://github.com/hrhouma1/monsupersite.git
 ##### Voir la remarque suivante :
 
 ## Remraque optionnelle 2 (troubleshooting2): 
