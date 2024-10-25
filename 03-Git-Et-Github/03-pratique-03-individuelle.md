@@ -4,6 +4,8 @@
 Dans ce projet, chaque étudiant va travailler de manière autonome sur un dépôt Git individuel. Ils vont simuler une collaboration entre un contributeur local (eux-mêmes) et un autre contributeur distant (leur propre dépôt GitHub) pour réaliser toutes les manipulations Git. Vous jouerez donc deux rôles : **vous-même localement** et **vous-même sur GitHub**.
 
 ---
+---
+---
 
 # **Étape 1 : Configuration initiale et génération de clé SSH (Professeur et Étudiant)**
 
@@ -37,8 +39,8 @@ Je vous fournis un dépôt GitHub vide que vous allez cloner sur vos machines. V
 # À DISTANCE (VOTRE GITHUB)
    - Copiez la clé publique SSH dans votre compte GitHub (Paramètres > SSH et GPG Keys > Ajouter une nouvelle clé SSH).
 
-
-6. **Modifiez votre .cat/config**
+# EN LOCAL
+4. **Modifiez votre .cat/config**
 
 *Remplacez le champ ci-bas (git@github.com:hrhouma1/monsupersite.git) par votre adresse ssh récupérée depuis votre Github*
 
@@ -93,6 +95,8 @@ Il faut tout simplement utiliser le https à la place et le modifier ultérieure
 
 
 
+---
+---
 ---
 
 # **Étape 2 : Simulation de collaboration (Local vs GitHub)**
