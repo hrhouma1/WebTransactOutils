@@ -1,275 +1,193 @@
-------------------------
-# Objectif: 
-------------------------
+# **Travail Pratique N°1 : Différence entre `git merge` et `git rebase`**
 
-- Illustrer la différence entre `git merge` et `git rebase`
-- Nous allons créer un dépôt Git, deux branches, et travailler sur chacune avec les commandes exactes.
+**Cours** : Gestion de versions avec Git  
+**Objectifs pédagogiques :**
+- Comprendre les différences fondamentales entre `git merge` et `git rebase`.
+- Observer les effets des deux commandes sur l’historique Git.
+- Documenter les manipulations avec des captures d’écran et des explications claires.
 
-### Étape 1 : Initialiser le dépôt et créer des commits de base
+---
 
-1. **Initialisez le dépôt Git :**
+## Objectifs du TP
+
+À la fin de ce TP, vous serez capable de :
+1. Utiliser `git merge` et `git rebase` pour intégrer des modifications de branches.
+2. Analyser les différences entre les deux commandes dans la structure de l'historique.
+3. Identifier les cas d'utilisation idéaux pour `merge` et `rebase`.
+
+---
+
+## Instructions et étapes détaillées
+
+### Préparation
+
+1. **Créez un dossier de travail pour ce TP** :
+   - Dans votre terminal, tapez les commandes suivantes pour préparer votre environnement :
+     ```bash
+     mkdir git-evaluation-1
+     cd git-evaluation-1
+     git init
+     ```
+
+2. **Capture d’écran** : Prenez une capture d’écran montrant l’initialisation du dépôt (`git init`).
+
+---
+
+## Étape 1 : Initialisation du dépôt et création de la branche principale
+
+1. **Création du fichier initial**  
+   Créez un fichier nommé `fichier1.txt` (fichier original) et ajoutez un commit de base sur la branche principale `main` :
    ```bash
-   mkdir git-evaluation
-   cd git-evaluation
-   git init
-   ```
-
-2. **Créez un fichier `fichier1.txt` et ajoutez le premier commit :**
-   ```bash
-   echo "Première ligne dans fichier1" > fichier1.txt
+   echo "Contenu initial dans fichier1" > fichier1.txt
    git add fichier1.txt
-   git commit -m "Ajout du fichier1 avec la première ligne"
+   git commit -m "Initialisation du projet avec fichier1.txt"
    ```
 
-3. **Ajoutez un deuxième commit en modifiant `fichier1.txt` :**
+2. **Renommez la branche principale en `main` (si nécessaire)** :
    ```bash
-   echo "Deuxième ligne dans fichier1" >> fichier1.txt
-   git add fichier1.txt
-   git commit -m "Ajout de la deuxième ligne dans fichier1"
+   git branch -M main
    ```
 
-4. **Ajoutez un troisième commit en ajoutant `fichier2.txt` :**
-   ```bash
-   echo "Contenu de fichier2" > fichier2.txt
-   git add fichier2.txt
-   git commit -m "Ajout du fichier2 avec son contenu"
-   ```
+3. **Capture d’écran** : Montrez l’ajout du fichier et le premier commit.
 
-   À ce stade, l'historique de `master` ressemble à ceci :
-   ```plaintext
-   (master)
-   A---B---C
-   ```
+---
 
-### Étape 2 : Créer les branches `feature-merge` et `feature-rebase`
+## Étape 2 : Création des branches pour le rebase et le merge
 
-1. **Créez la branche `feature-merge` et basculez dessus :**
-   ```bash
-   git checkout -b feature-merge
-   ```
-
-2. **Ajoutez trois commits dans `feature-merge` :**
-
-   - **Premier commit :**
+1. **Créez les branches `branche1` et `branche2` à partir de `main`** :
+   - Créez `branche1` :
      ```bash
-     echo "Contenu initial dans feature-merge" > merge-example.txt
-     git add merge-example.txt
-     git commit -m "Ajout de merge-example.txt avec contenu initial"
+     git checkout -b branche1
+     ```
+   - Revenez sur `main` et créez `branche2` :
+     ```bash
+     git checkout main
+     git checkout -b branche2
      ```
 
-   - **Deuxième commit :**
+2. **Création des branches de travail** :
+   - Créez `branche-rebase` à partir de `branche1` :
      ```bash
-     echo "Ligne additionnelle dans merge-example" >> merge-example.txt
-     git add merge-example.txt
-     git commit -m "Ajout d'une ligne additionnelle dans merge-example"
+     git checkout branche1
+     git checkout -b branche-rebase
+     ```
+   - Créez `branche-merge` à partir de `branche2` :
+     ```bash
+     git checkout branche2
+     git checkout -b branche-merge
      ```
 
-   - **Troisième commit :**
+3. **Capture d’écran** : Montrez la création des branches avec la commande `git branch`.
+
+---
+
+## Étape 3 : Ajout de commits identiques sur `branche-rebase` et `branche-merge`
+
+> **Note :** Nous allons utiliser des fichiers différents (`fichier-2-rebase.txt` et `fichier-2-merge.txt`) et effectuer les mêmes modifications pour pouvoir comparer les effets de `merge` et `rebase`.
+
+1. **Travail sur `branche-rebase`** :
+   - **Premier commit** :
      ```bash
-     echo "Dernière ligne dans merge-example" >> merge-example.txt
-     git add merge-example.txt
-     git commit -m "Ajout de la dernière ligne dans merge-example"
+     git checkout branche-rebase
+     echo "Modification 1 dans branche-rebase" > fichier-2-rebase.txt
+     git add fichier-2-rebase.txt
+     git commit -m "Ajout de fichier-2-rebase.txt avec modification 1"
      ```
 
-   L’historique de `feature-merge` est maintenant :
-   ```plaintext
-   (feature-merge)
-       D---E---F
-   ```
-
-3. **Retournez à `master` et créez la branche `feature-rebase` :**
-   ```bash
-   git checkout master
-   git checkout -b feature-rebase
-   ```
-
-4. **Ajoutez trois commits dans `feature-rebase` :**
-
-   - **Premier commit :**
+   - **Deuxième commit** :
      ```bash
-     echo "Contenu initial dans feature-rebase" > rebase-example.txt
-     git add rebase-example.txt
-     git commit -m "Ajout de rebase-example.txt avec contenu initial"
+     echo "Modification 2 dans branche-rebase" >> fichier-2-rebase.txt
+     git add fichier-2-rebase.txt
+     git commit -m "Ajout de modification 2 dans fichier-2-rebase.txt"
      ```
 
-   - **Deuxième commit :**
+   - **Troisième commit** :
      ```bash
-     echo "Ligne additionnelle dans rebase-example" >> rebase-example.txt
-     git add rebase-example.txt
-     git commit -m "Ajout d'une ligne additionnelle dans rebase-example"
+     echo "Modification 3 dans branche-rebase" >> fichier-2-rebase.txt
+     git add fichier-2-rebase.txt
+     git commit -m "Ajout de modification 3 dans fichier-2-rebase.txt"
      ```
 
-   - **Troisième commit :**
+2. **Travail sur `branche-merge`** :
+   - **Premier commit** :
      ```bash
-     echo "Dernière ligne dans rebase-example" >> rebase-example.txt
-     git add rebase-example.txt
-     git commit -m "Ajout de la dernière ligne dans rebase-example"
+     git checkout branche-merge
+     echo "Modification 1 dans branche-merge" > fichier-2-merge.txt
+     git add fichier-2-merge.txt
+     git commit -m "Ajout de fichier-2-merge.txt avec modification 1"
      ```
 
-   L’historique de `feature-rebase` est maintenant :
-   ```plaintext
-   (feature-rebase)
-       G---H---I
-   ```
+   - **Deuxième commit** :
+     ```bash
+     echo "Modification 2 dans branche-merge" >> fichier-2-merge.txt
+     git add fichier-2-merge.txt
+     git commit -m "Ajout de modification 2 dans fichier-2-merge.txt"
+     ```
 
-### Étape 3 : Fusion de `feature-merge` dans `master` avec `git merge`
+   - **Troisième commit** :
+     ```bash
+     echo "Modification 3 dans branche-merge" >> fichier-2-merge.txt
+     git add fichier-2-merge.txt
+     git commit -m "Ajout de modification 3 dans fichier-2-merge.txt"
+     ```
 
-1. **Revenez sur `master` :**
-   ```bash
-   git checkout master
-   ```
+3. **Capture d’écran** : Montrez les commits réalisés dans chaque branche avec `git log`.
 
-2. **Fusionnez `feature-merge` dans `master` :**
-   ```bash
-   git merge feature-merge -m "Fusion de feature-merge dans master"
-   ```
+---
 
-   L’historique avec `git merge` ressemble maintenant à ceci :
-   ```plaintext
-   (master)
-   A---B---C-------J
-          |       /
-          D---E---F
-   ```
+## Étape 4 : Intégration des branches avec `merge` et `rebase`
 
-   Ici, `J` est un commit de fusion qui conserve l'historique distinct de `feature-merge`.
+1. **Rebase de `branche-rebase` dans `branche1`** :
+   - Basculez sur `branche1` :
+     ```bash
+     git checkout branche1
+     ```
+   - Rebasez `branche-rebase` dans `branche1` :
+     ```bash
+     git rebase branche-rebase
+     ```
 
-### Étape 4 : Fusion de `feature-rebase` dans `master` avec `git rebase`
+   - **Capture d’écran** : Utilisez `git log --oneline --graph --all` pour montrer l’historique linéaire créé par le rebase.
 
-1. **Revenez sur `feature-rebase` :**
-   ```bash
-   git checkout feature-rebase
-   ```
+2. **Merge de `branche-merge` dans `branche2`** :
+   - Basculez sur `branche2` :
+     ```bash
+     git checkout branche2
+     ```
+   - Fusionnez `branche-merge` dans `branche2` :
+     ```bash
+     git merge branche-merge -m "Fusion de branche-merge dans branche2"
+     ```
 
-2. **Rebasez `feature-rebase` sur `master` :**
-   ```bash
-   git rebase master
-   ```
+   - **Capture d’écran** : Utilisez `git log --oneline --graph --all` pour montrer l’historique avec le commit de fusion.
 
-   Cette commande applique les commits `G`, `H`, et `I` de `feature-rebase` après le commit `J` de `master`, créant un historique linéaire :
+---
 
-   ```plaintext
-   (master)
-   A---B---C---J---G'---H'---I'
-   ```
+## Étape 5 : Comparaison finale et questions de réflexion
 
-   Les commits `G'`, `H'`, et `I'` sont les versions réappliquées de `G`, `H`, et `I` après `J`.
+### Questions de réflexion
 
-3. **Revenez sur `master` et faites un fast-forward merge de `feature-rebase` :**
-   ```bash
-   git checkout master
-   git merge feature-rebase
-   ```
+1. **Comparer les historiques** :
+   - Que remarquez-vous dans la différence entre l’historique de `branche1` (avec `rebase`) et celui de `branche2` (avec `merge`) ?
+   - Prenez une capture d’écran de chaque historique et expliquez les différences observées.
 
-   L’historique final sur `master` est donc linéaire grâce au rebase de `feature-rebase`.
+2. **Arguments pour chaque méthode** :
+   - Dans quels cas serait-il préférable d’utiliser `rebase` pour intégrer des modifications ?
+   - Dans quels cas le `merge` est-il plus avantageux ?
 
-### Étape 5 : Vérifier l'historique avec `git log`
+3. **Scénarios d’application** :
+   - Imaginez un projet en équipe. Expliquez un cas concret où `merge` pourrait causer des conflits dans l'historique, et comment `rebase` pourrait résoudre ce problème.
+   - Inversement, décrivez un cas où l’utilisation excessive de `rebase` pourrait poser des difficultés de suivi dans un projet collaboratif.
 
-Utilisez `git log --oneline --graph --all` pour observer la différence dans l'historique :
+---
 
-```bash
-git log --oneline --graph --all
-```
+## Résumé et soumission
 
-- Avec `git merge`, l’historique montrera une **jonction** avec un commit de fusion.
-- Avec `git rebase`, l’historique est **linéaire** sans commit de fusion.
+**Pour soumettre ce TP** :
+1. Compilez vos réponses et captures d’écran dans un document (PDF ou Word).
+2. Répondez aux questions de réflexion en bas du document.
+3. Soumettez votre fichier sur la plateforme de cours.
 
-### Récapitulatif
+---
 
-| Commande                   | Action                                      |
-|----------------------------|---------------------------------------------|
-| `git checkout -b feature-merge` | Crée la branche `feature-merge` et y bascule |
-| `git commit -m "...`       | Ajoute des commits dans chaque branche      |
-| `git merge feature-merge`  | Fusionne `feature-merge` dans `master` avec un commit de fusion |
-| `git rebase master`        | Rebase `feature-rebase` pour rendre l’historique linéaire |
-| `git log --oneline --graph --all` | Visualise l'historique complet |
-
-En suivant ces étapes, les étudiants comprendront clairement comment `git merge` et `git rebase` impactent l'historique Git, en ayant une vue pratique sur la différence entre un historique avec un commit de fusion et un historique linéaire.
-
-
-
------------------------------------------------------------------------
-# Annexe : Différence entre `git merge` et `git rebase`. 
------------------------------------------------------------------------
-
-### Historique initial
-
-Imaginons un projet où la branche principale est `master` avec trois commits initiaux :
-
-```plaintext
-(master)
-A---B---C
-```
-
-Ensuite, on crée deux nouvelles branches depuis `master` :
-
-1. **`feature-merge`** : pour tester `git merge`
-2. **`feature-rebase`** : pour tester `git rebase`
-
-### Travail dans chaque branche
-
-Dans chaque branche, nous ajoutons trois nouveaux commits. Voici ce que cela donne :
-
-```plaintext
-(master)
-A---B---C
-
-(feature-merge)
-       \
-        D---E---F   # Commits sur feature-merge
-
-(feature-rebase)
-       \
-        G---H---I   # Commits sur feature-rebase
-```
-
-### Étape 1 : Fusion de `feature-merge` dans `master` avec `git merge`
-
-Pour `feature-merge`, nous utilisons la commande `git merge` sur la branche `master`. Cela crée un **commit de merge** qui garde un historique complet avec toutes les branches, sans réorganiser les commits. 
-
-Voici l’historique après le `merge` :
-
-```plaintext
-(master)
-A---B---C-------J      # J est le commit de merge
-       |       /
-       |      /
-(feature-merge)
-        D---E---F      # feature-merge garde son historique séparé
-```
-
-- **Explication** : `git merge` ajoute les commits de `feature-merge` (`D`, `E`, `F`) à l’historique de `master` sans les déplacer ni les modifier. Il crée simplement un nouveau commit `J` pour indiquer la fusion.
-- **Observation** : Avec `git merge`, on voit un "point de jonction" dans l'historique où les deux branches se rencontrent. Cela permet de voir que `feature-merge` a été fusionnée avec `master`, tout en conservant l’historique distinct.
-
-### Étape 2 : Fusion de `feature-rebase` dans `master` avec `git rebase`
-
-Pour `feature-rebase`, nous utilisons `git rebase`. Au lieu de créer un commit de merge, `git rebase` déplace les commits (`G`, `H`, `I`) comme s'ils avaient été créés après `C` dans `master`. Voici l’historique après le `rebase` :
-
-```plaintext
-(master)
-A---B---C---G'---H'---I'
-```
-
-- **Explication** : `git rebase` applique les commits de `feature-rebase` (`G`, `H`, `I`) à la suite des commits de `master` (après `C`). Les commits sont "rejoués" comme s’ils avaient été créés directement après `C`, donc ils apparaissent dans un ordre linéaire.
-- **Observation** : Avec `git rebase`, l’historique est plus propre et linéaire, mais on perd le point de jonction qui montre l'existence d'une branche séparée.
-
-### Comparaison finale
-
-Pour résumer les différences observées dans le log Git :
-
-- **git merge** : 
-  - Garde l’historique complet avec les branches distinctes.
-  - Crée un commit de fusion qui montre visuellement le moment où les deux branches se rejoignent.
-  - **Avantage** : Idéal pour suivre un historique complet, particulièrement dans les projets collaboratifs.
-
-- **git rebase** :
-  - Réorganise l’historique pour le rendre linéaire, en plaçant les commits de `feature-rebase` comme s’ils avaient été faits après `C`.
-  - **Avantage** : Rend l’historique plus propre, utile pour les projets où on veut minimiser les points de jonction dans le log.
-
-En résumé :
-
-```plaintext
-git merge   ->  Historique complet avec commit de fusion
-git rebase  ->  Historique linéaire sans commit de fusion
-```
-
+**Note aux étudiants** : Ce TP est conçu pour vous permettre de pratiquer Git en profondeur. N'hésitez pas à expérimenter et à documenter toute difficulté rencontrée dans vos réponses.
