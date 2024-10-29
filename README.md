@@ -16,3 +16,11 @@
 +------------+-------------------+--------------------+
 ```
 
+
+# Dates limites de remise des travaux
+
+- **Travail 1** : Fin de Semaine -7 → **Dimanche 10 novembre 2024 à minuit**
+- **Travail 2** : Fin de Semaine -5 → **Dimanche 24 novembre 2024 à minuit**
+- **Travail 3** : Fin de Semaine -3 → **Dimanche 8 décembre 2024 à minuit**
+- **Travail 4** : Fin de Semaine -1 → **Vendredi 20 décembre 2024 à minuit**
+
