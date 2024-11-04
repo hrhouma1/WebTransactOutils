@@ -1,6 +1,6 @@
 # **Travail Pratique N°2 :  Étapes pratiques
 
-**Instructions :**  
+# **Instructions :**  
 Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur votre dépôt Git. Le professeur validera certaines étapes pour attribuer les points correspondants.
 
 ---
@@ -15,7 +15,7 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 ---
 
-### 📢 **LE PROF VALIDE dès qu'il reçoit votre push sur `main`** (10%)
+# 📢 **LE PROF VALIDE dès qu'il reçoit votre push sur `main`** (10%)
 
 ---
 
@@ -26,7 +26,7 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 ---
 
-### 📢 **LE PROF VALIDE et CONFIRME L'AJOUT DES BRANCHES** (5%)
+# 📢 **LE PROF VALIDE et CONFIRME L'AJOUT DES BRANCHES** (5%)
 
 ---
 
