@@ -15,7 +15,7 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 ---
 
-# 🛑 **STOP - ÉTAPE 1 : LE PROF VALIDE dès qu'il reçoit votre push sur `main`** (10%)
+# 🛑 **STOP - ÉTAPE 1 : LE PROF VALIDE dès qu'il reçoit votre push sur `main`**
 
 ---
 
@@ -26,7 +26,7 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 ---
 
-# 🛑 **STOP - ÉTAPE 2 : LE PROF VALIDE et VOUS CONFIRME L'AJOUT DE BRANCHES** (5%)
+# 🛑 **STOP - ÉTAPE 2 : LE PROF VALIDE et VOUS CONFIRME L'AJOUT DE BRANCHES**
 
 ---
 
@@ -34,10 +34,10 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 # 🛑 **STOP - ÉTAPE 3 : LE PROFESSEUR FAIT UN PULL REQUEST DE LA PREMIÈRE BRANCHE REÇUE**
 
-   - **15)** Chaque étudiant doit faire un pull de la branche `main` pour récupérer les dernières modifications.
-   - **16)** Chaque étudiant doit résoudre l'énigme du premier étudiant (Mathieu) sur sa propre branche.
+   - Chaque étudiant doit faire un pull de la branche `main` pour récupérer les dernières modifications.
+   - Chaque étudiant doit résoudre l'énigme du premier étudiant (Mathieu) sur sa propre branche.
 
-17) Une fois que l'énigme de Mathieu est résolue sur votre branche locale `<br_votreprenom>`, chaque étudiant doit faire un push de sa branche locale (par exemple, `br_haythem` en local) vers sa branche distante (`br_haythem`). **(10%)**
+17) Une fois que l'énigme de Mathieu est résolue sur votre branche locale `<br_votreprenom>`, chaque étudiant doit faire un push de sa branche locale vers sa branche distante.
 
 ⚠️ **Attention : Ne faites pas de changements directement dans `main` ! (sinon, il y a une pénalité)**
 
@@ -63,23 +63,31 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
    - Vérifiez les branches locales et distantes
    - Passez sur chaque branche des autres étudiants pour effectuer un pull de leurs modifications
 
-   ### ➡️ **Processus recommandé :**
-   - `git checkout main`
-   - `git fetch --all`
-   - `git branch`
-   - `git branch -r`
-   - `git branch -a`
+### ➡️ **Processus recommandé :**
 
-   Ensuite, pour chaque branche d’étudiant, passez à la branche et faites un pull :
+```bash
+git checkout main
+git fetch --all
+git branch
+git branch -r
+git branch -a
+```
 
-   - `git checkout br_elodie`
-   - `git pull origin br_elodie`
-   - **Répétez ces étapes pour chaque branche** (par exemple, `br_mathieu`, `enigme_samaneh`, `br_marcolivier`).
+Ensuite, pour chaque branche d’étudiant, passez à la branche et faites un pull, par exemple pour Elodie :
 
-   Terminez en revenant sur **votre propre branche** et effectuez un pull pour récupérer les dernières modifications :
+```bash
+git checkout br_elodie
+git pull origin br_elodie
+```
 
-   - `git checkout <VOTRE_BRANCHE>`
-   - `git pull origin <VOTRE_BRANCHE>`
+Répétez ces étapes pour chaque branche (par exemple, `br_mathieu`, `enigme_samaneh`, `br_marcolivier`).
+
+Terminez en revenant sur **votre propre branche** et effectuez un pull pour récupérer les dernières modifications :
+
+```bash
+git checkout <VOTRE_BRANCHE>
+git pull origin <VOTRE_BRANCHE>
+```
 
 ---
 
@@ -91,6 +99,3 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 21) **Chaque étudiant** effectue un push de sa branche locale avec son nom vers sa branche distante, avec toutes ses modifications et réponses.
 
----
-
-Bonne chance et n'hésitez pas à poser des questions au professeur en cas de besoin !
