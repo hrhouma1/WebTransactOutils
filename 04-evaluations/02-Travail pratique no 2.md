@@ -32,7 +32,7 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 14) **Règle 1 :** Le premier étudiant qui fait un push de sa branche ne fait rien à cette étape ! (supposons Mathieu)  
 
-# 🛑 **STOP - ÉTAPE 3 : LE PROFESSEUR FAIT UN PULL REQUEST DE LA PREMIÈRE BRANCHE REÇUE**
+# 🛑 **STOP - ÉTAPE 3 : LE PROFESSEUR FAIT UN PULL REQUEST SEULEMENT DE LA PREMIÈRE BRANCHE REÇUE À CE STADE**
 
    - Chaque étudiant doit faire un pull de la branche `main` pour récupérer les dernières modifications.
    - Chaque étudiant doit résoudre l'énigme du premier étudiant (Mathieu) sur sa propre branche.
