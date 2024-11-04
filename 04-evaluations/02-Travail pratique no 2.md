@@ -1,4 +1,4 @@
-# Examen sur Git : Étapes pratiques
+# **Travail Pratique N°2 :  Étapes pratiques
 
 **Instructions :**  
 Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur votre dépôt Git. Le professeur validera certaines étapes pour attribuer les points correspondants.
