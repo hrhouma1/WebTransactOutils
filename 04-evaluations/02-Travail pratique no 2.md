@@ -1,4 +1,4 @@
-# Travail Pratique N°2 :  Étapes pratiques
+# Travail Pratique N°2 : Étapes pratiques
 
 # **Instructions :**  
 Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur votre dépôt Git. Le professeur validera certaines étapes pour attribuer les points correspondants.
@@ -50,9 +50,47 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 ---
 
-# 🛑 **STOP - ÉTAPE 4 : Étudiant ⇒ Prof : Faites signe au professeur que vous avez terminé l'étape #3.**
+# 🛑 **STOP - ÉTAPE 4 : LE PROFESSEUR FAIT UN PULL REQUEST DE TOUTES LES BRANCHES DANS `MAIN`**
+
+   **Remarque :** À ce stade, le professeur résout les conflits. Vous aurez un `main` consolidé avec tous les changements de chaque étudiant.
 
 ---
 
-Bonne chance !
+19) **Chaque étudiant** doit maintenant apporter toutes les branches en local dans son dépôt local. Suivez les étapes ci-dessous pour récupérer les branches :
 
+   - Passez à la branche `main`
+   - Récupérez toutes les branches du dépôt distant
+   - Vérifiez les branches locales et distantes
+   - Passez sur chaque branche des autres étudiants pour effectuer un pull de leurs modifications
+
+   ### ➡️ **Processus recommandé :**
+   - `git checkout main`
+   - `git fetch --all`
+   - `git branch`
+   - `git branch -r`
+   - `git branch -a`
+
+   Ensuite, pour chaque branche d’étudiant, passez à la branche et faites un pull :
+
+   - `git checkout br_elodie`
+   - `git pull origin br_elodie`
+   - **Répétez ces étapes pour chaque branche** (par exemple, `br_mathieu`, `enigme_samaneh`, `br_marcolivier`).
+
+   Terminez en revenant sur **votre propre branche** et effectuez un pull pour récupérer les dernières modifications :
+
+   - `git checkout <VOTRE_BRANCHE>`
+   - `git pull origin <VOTRE_BRANCHE>`
+
+---
+
+# 🛑 **STOP - ÉTAPE 5 : LE PROFESSEUR RÉPOND À VOS ÉNIGMES SUR VOTRE BRANCHE**
+
+---
+
+20) **Chaque étudiant** doit également répondre à **sa propre énigme** sur sa branche.
+
+21) **Chaque étudiant** effectue un push de sa branche locale avec son nom vers sa branche distante, avec toutes ses modifications et réponses.
+
+---
+
+Bonne chance et n'hésitez pas à poser des questions au professeur en cas de besoin !
