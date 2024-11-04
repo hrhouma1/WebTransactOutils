@@ -1,7 +1,3 @@
-Voici la version avec les consignes formulées pour les actions des étudiants directement :
-
----
-
 # Travail Pratique N°2 :  Étapes pratiques
 
 # **Instructions :**  
