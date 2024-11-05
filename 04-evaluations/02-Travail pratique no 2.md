@@ -5,7 +5,7 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 ---
 
-1) Cloner le dépôt  
+1) Cloner le dépôt  https://github.com/hrhouma1/travail-pratique-2.git 
 2) Configurer le dépôt avec vos informations globales et locales  
 3) Vérifier `.git/config`  
 4) Générer votre clé SSH avec `ssh-keygen`  
