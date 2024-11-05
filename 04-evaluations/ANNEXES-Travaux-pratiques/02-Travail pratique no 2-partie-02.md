@@ -225,3 +225,58 @@ Nous avons une branche `main` et une branche `branche_merge` qui contient trois 
 ### Conclusion
 
 Cet exemple théorique montre que `merge` préserve l’intégrité de chaque branche en ajoutant un commit de fusion au lieu de réécrire les identifiants de commits. Cela crée un historique arborescent qui conserve la traçabilité des contributions de chaque branche sans modifier les commits originaux.
+
+
+-------------
+
+# Correction du schéma visuel :
+
+
+Dans un affichage d'historique Git, le commit initial, tel que `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb` ("Initialisation du projet"), doit apparaître en bas, car il est le tout premier commit. Voici le schéma final corrigé, qui respecte complètement l'ordre des commits, du plus récent au plus ancien.
+
+---
+
+### Schéma : `git merge` de `branche_merge` dans `branche2` (avec l'ordre final correct)
+
+1. **État final après le merge :** Ce schéma montre l'historique après le merge de `branche_merge` dans `branche2`, avec le commit de fusion en haut et les commits des branches dans le bon ordre.
+
+```
+         branche2 après merge (avec commit de fusion en haut)
+                         |
+                         |
+                         o-----------------------------------------> mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+                        (Commit de fusion entre branche2 et branche_merge)
+                         |
+                         |
+                         |       branche_merge
+                         |            |
+                         |            |
+                         |            o----> 333333333333333333333333333333
+                         |           (Modification 3 dans branche_merge)
+                         |
+                         |            |
+                         |            o----> 222222222222222222222222222222
+                         |           (Modification 2 dans branche_merge)
+                         |
+                         |            |
+                         |            o----> 111111111111111111111111111111
+                         |           (Modification 1 dans branche_merge)
+                         |
+                         |
+                         |
+                         o-------------------------------------> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        (Modification dans main)
+                         |
+                         |
+                         |
+        o----------------o-------------------------------------> bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+       (Initial commit)                                      (Initialisation du projet)
+```
+
+### Explication
+
+- **Ordre des commits dans l’historique** : Le commit de fusion `mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm` apparaît en haut, car il est le plus récent après le merge.
+- **Ordre dans `branche_merge`** : Les commits dans `branche_merge` suivent un ordre chronologique descendant, du plus récent `333333333333333333333333333333` au plus ancien `111111111111111111111111111111`.
+- **Commits initiaux de `main`** : Les commits initiaux, `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa` ("Modification dans main") et `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb` ("Initialisation du projet"), apparaissent en bas, avec le tout premier commit en dernier.
+
+Ce schéma final reflète fidèlement l'historique d'un `git merge` tel qu'il apparaît dans `git log`, avec les commits les plus récents en haut et les plus anciens en bas.
