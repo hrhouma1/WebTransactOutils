@@ -1,4 +1,83 @@
-# Annexe Théorie : Exemple de rebase avec identifiants de commits fictifs
+
+
+
+--------------------------
+# Annexe Théorie1 -  Schéma : `git rebase` de `branche_rebase` sur `branche1`
+--------------------------
+
+1. **État initial :** Voici la structure des branches avant de faire le `rebase`. Les commits de `main` sont présents sur `branche1`, tandis que `branche_rebase` contient ses propres commits.
+
+```
+                       main
+                         |
+                         |
+        o----------------o---------------------> bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+       (Initial commit)  |                     (Initialisation du projet)
+                         |
+                         |
+                         o---------------------> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        (Modification dans main)
+
+       branche1                    branche_rebase
+         |                                |
+         |                                |
+         o--------------------------------|
+        (même historique                  |
+         que main)                        |
+                                          |
+                                          o----> 111111111111111111111111111111
+                                         (Modification 1 dans branche_rebase)
+
+                                          |
+                                          o----> 222222222222222222222222222222
+                                         (Modification 2 dans branche_rebase)
+
+                                          |
+                                          o----> 333333333333333333333333333333
+                                         (Modification 3 dans branche_rebase)
+```
+
+2. **Rebase :** Nous basculons sur `branche1` et exécutons `git rebase branche_rebase`. Les commits de `branche_rebase` sont réécrits et ajoutés à `branche1` avec de nouveaux identifiants. Le résultat final est un historique linéaire intégrant toutes les modifications.
+
+---
+
+```
+              branche1 après rebase (intégrant les commits de branche_rebase)
+                         |
+                         |
+        o----------------o-------------------------------------> bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+       (Initial commit)  |                                    (Initialisation du projet)
+                         |
+                         |
+                         o------------------------------------> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        (Modification dans main)
+                         |
+                         |
+                         o------------------------------------> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        (Modification 1 dans branche_rebase)
+                         |
+                         |
+                         o------------------------------------> yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+                        (Modification 2 dans branche_rebase)
+                         |
+                         |
+                         o------------------------------------> zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+                        (Modification 3 dans branche_rebase)
+```
+
+### Explication
+
+- **Avant le rebase** : `branche1` contient les commits `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb` et `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa` de `main`. De son côté, `branche_rebase` contient ses propres commits (`11111111...`, `22222222...`, `33333333...`), qui ne sont pas dans l’historique de `branche1`.
+
+- **Après le rebase** : Les commits de `branche_rebase` sont ajoutés à `branche1`, mais ils ont de nouveaux identifiants (`xxxxxxxx...`, `yyyyyyyy...`, `zzzzzzzz...`). L’historique de `branche1` devient linéaire et inclut maintenant toutes les modifications de `branche_rebase` tout en préservant les commits de `main`.
+
+Ce schéma illustre bien comment `rebase` permet d’obtenir un historique linéaire tout en intégrant les commits d'une autre branche, en modifiant leurs identifiants pour éviter des conflits d'historique.
+
+
+
+--------------------------
+# Annexe Théorie2 -  Exemple de rebase avec identifiants de commits fictifs
+--------------------------
 
 ### Contexte de départ
 
