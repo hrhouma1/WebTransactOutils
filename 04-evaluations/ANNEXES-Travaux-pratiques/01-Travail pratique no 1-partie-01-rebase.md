@@ -202,3 +202,82 @@ Nous avons une branche `main` et une branche `branche_rebase` qui contient trois
 ### Conclusion
 
 Grâce à cet exemple théorique, nous observons que `rebase` conserve les modifications de `branche_rebase` mais modifie les identifiants de commits. Cela crée un historique linéaire qui peut simplifier la lecture de l’historique, mais nécessite de prêter attention aux changements d’identifiants de commits pour ne pas perdre le suivi des modifications dans des collaborations.
+
+
+----------
+# Correction du schéma visuel
+-------------------
+
+L'historique doit bien suivre l'ordre chronologique inverse : du plus récent en haut au plus ancien en bas. Voici le schéma corrigé avec les commits de `branche_rebase` et `branche1` dans le bon ordre, affichés du plus récent au plus ancien.
+
+---
+
+# Annexe Théorie1 - Schéma : `git rebase` de `branche_rebase` sur `branche1`
+
+1. **État initial :** Voici la structure des branches avant de faire le `rebase`. Les commits de `main` sont présents sur `branche1`, tandis que `branche_rebase` contient ses propres commits, du plus récent en haut au plus ancien en bas.
+
+```
+                       main
+                         |
+                         |
+        o----------------o---------------------> bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+       (Initial commit)  |                     (Initialisation du projet)
+                         |
+                         |
+                         o---------------------> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        (Modification dans main)
+
+       branche1                    branche_rebase
+         |                                |
+         |                                |
+         o--------------------------------|
+        (même historique                  |
+         que main)                        |
+                                          |
+                                          o----> 333333333333333333333333333333
+                                         (Modification 3 dans branche_rebase)
+                                          |
+                                          |
+                                          o----> 222222222222222222222222222222
+                                         (Modification 2 dans branche_rebase)
+                                          |
+                                          |
+                                          o----> 111111111111111111111111111111
+                                         (Modification 1 dans branche_rebase)
+```
+
+2. **Rebase :** Nous basculons sur `branche1` et exécutons `git rebase branche_rebase`. Les commits de `branche_rebase` sont réécrits et ajoutés à `branche1` avec de nouveaux identifiants. Le résultat final est un historique linéaire intégrant toutes les modifications.
+
+---
+
+```
+              branche1 après rebase (intégrant les commits de branche_rebase)
+                         |
+                         |
+        o------------------------------------> zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+       (Modification 3 dans branche_rebase)
+                         |
+                         |
+                         o------------------------------------> yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+                        (Modification 2 dans branche_rebase)
+                         |
+                         |
+                         o------------------------------------> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        (Modification 1 dans branche_rebase)
+                         |
+                         |
+                         o-------------------------------------> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        (Modification dans main)
+                         |
+                         |
+        o----------------o-------------------------------------> bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+       (Initial commit)                                     (Initialisation du projet)
+```
+
+### Explication
+
+- **Avant le rebase** : `branche1` contient les commits `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb` et `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa` de `main`. `branche_rebase` contient ses propres commits (`33333333...`, `22222222...`, `11111111...`) du plus récent au plus ancien.
+  
+- **Après le rebase** : Les commits de `branche_rebase` sont ajoutés à `branche1` avec de nouveaux identifiants (`zzzzzzzz...`, `yyyyyyyy...`, `xxxxxxxx...`). L'historique de `branche1` devient linéaire, avec les commits de `branche_rebase` apparaissant juste avant les commits initiaux de `main`.
+
+Ce schéma reflète le résultat final d'un `rebase` : un historique linéaire intégrant tous les commits dans l'ordre du plus récent en haut au plus ancien en bas.
