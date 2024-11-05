@@ -1,6 +1,7 @@
+--------------------------
+# Annexe Théorie1 -  Schéma : `git merge` de `branche_merge` dans `branche2`
+--------------------------
 
-
-### Schéma : `git merge` de `branche_merge` dans `branche2`
 
 1. **État initial :** Voici l’état initial des branches avant de faire le `merge`. La branche `branche2` contient les commits de `main`, tandis que `branche_merge` possède ses propres commits.
 
