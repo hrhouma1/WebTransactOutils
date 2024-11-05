@@ -1,3 +1,18 @@
+# **Question :**
+
+Vous travaillez avec deux branches dans votre projet Git : `branche1` et `branche_rebase`. Sur `branche_rebase`, vous avez effectué trois commits pour apporter des modifications. Vous souhaitez intégrer ces modifications dans `branche1`, alors vous basculez sur `branche1` et effectuez un `rebase` sur `branche_rebase`.
+
+1. **Avant** le rebase, vous exécutez `git log` sur `branche_rebase` et voyez les trois commits avec leurs identifiants de commit (*hashes*).
+2. **Après** le rebase, vous exécutez `git log` sur `branche1` et vous vous attendez à voir les trois commits de `branche_rebase`, mais avec des identifiants de commit modifiés. Cependant, vous remarquez que les *hashes* des trois commits sont restés inchangés dans `branche1`.
+
+**Expliquez pourquoi les identifiants de commits n'ont pas été modifiés après le rebase.**
+
+**Points de réflexion pour guider votre réponse :**
+1. Pourquoi Git ne réécrit-il pas toujours les identifiants de commits lors d'un rebase ?
+2. Dans quelles conditions Git peut-il effectuer un *fast-forward* pendant un rebase, laissant les identifiants de commits inchangés ?
+
+
+# Réponse : 
 Cela se produit probablement parce que le `rebase` que vous avez effectué était en réalité un *fast-forward rebase*, ou parce qu'il n'y a eu aucun changement entre la branche de base et la branche rebased.
 
 Voici les scénarios pour lesquels les identifiants de commits ne changent pas après un `rebase` :
