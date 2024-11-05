@@ -43,7 +43,7 @@ Suivez chaque étape dans l'ordre et effectuez les manipulations demandées sur 
 
 ### ➡️ Processus recommandé :
 
-➡️ `br_votreprenom (MATHIEU POSTE LOCAL)` ➡️ `br_votreprenom (MATHIEU GITHUB)` ➡️ *Pull request avec*➡️ `main (GITHUB)` ➡️ `pull` ➡️*VERS*➡️ `main (POSTE LOCAL)`➡️ *ALLER À* ➡️ `br_votreprenom (VOTRE BRANCHE LOCAL)` ➡️ `merge` avec `ton main LOCAL qui est mise à jour depuis MAIN de GITHUB`
+➡️ `br_votreprenom (MATHIEU POSTE LOCAL)` ➡️ `br_votreprenom (MATHIEU GITHUB)` ➡️ *Pull request avec*➡️ `main (GITHUB)` ➡️ `pull` ➡️*VERS*➡️ `main (POSTE LOCAL)`➡️ *ALLER À* ➡️ `br_votreprenom (VOTRE BRANCHE LOCAL)` ➡️ `merge` avec `ton main LOCAL qui est mise à jour depuis MAIN de GITHUB` ➡️ `PUSH DEPUIS br_votreprenom EN LOCAL ` ➡️ `br_votreprenom (VOTRE BRANCHE SUR GITHUB)` 
 
 - **Ajoutez et committez les modifications**  
 - **Effectuez un pull/push de votre branche locale vers votre branche distante**
