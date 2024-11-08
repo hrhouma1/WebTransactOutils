@@ -32,7 +32,7 @@
 Une fois connecté à la VM, mettez à jour le système avec les commandes suivantes :
 
 ```bash
-sudo apt update && sudo apt upgrade -y
+sudo apt update -y
 ```
 
 ---
