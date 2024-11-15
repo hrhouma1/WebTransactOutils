@@ -4,7 +4,7 @@
 
 ### **Partie 1 : Quiz (20 points)**
 
-**Instructions** : Choisissez la meilleure réponse pour chaque question. Chaque question vaut **5 points**.
+**Instructions** : Choisissez la meilleure réponse pour chaque question. Chaque question vaut **1 points**.
 
 #### Questions :
 1. Quelle commande permet de cloner un dépôt Git ?
