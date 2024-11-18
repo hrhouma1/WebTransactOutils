@@ -112,6 +112,4 @@ C’est pourquoi Let's Encrypt n’apparaît pas directement dans cette liste, p
 ### **Résumé en une phrase**
 - **Let's Encrypt** est l'autorité qui fournit les certificats SSL/TLS gratuitement, tandis que **Certbot** est un outil conçu pour interagir avec Let's Encrypt afin d'automatiser l'obtention et la gestion de ces certificats.
 
----
 
-Si vous avez encore des questions ou besoin d'exemples pratiques, je suis là pour vous aider ! 😊
