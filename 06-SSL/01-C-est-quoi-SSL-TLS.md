@@ -1,4 +1,11 @@
+------------------
+------------------
+------------------
 # **Cours SSL/TLS**
+------------------
+------------------
+------------------
+
 
 Ce paragraphe est conçu pour introduire les concepts de base de SSL/TLS, expliquer pourquoi ces technologies sont nécessaires, et exposer les solutions existantes avec des exemples pratiques.
 
