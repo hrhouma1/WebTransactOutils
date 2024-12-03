@@ -1,12 +1,18 @@
+# Étude de cas : exemple d'un site non sécurisé 
 
-![image](https://github.com/user-attachments/assets/2e619f5b-f1cb-4406-bcb9-899a7cdb476c)
+# **Étude de cas : Comment rendre un site sécurisé et optimiser sa redirection HTTPS**
+
+![image](https://github.com/user-attachments/assets/03b7a165-c3e5-4e8a-ba7c-199937284a37)
+
+![image](https://github.com/user-attachments/assets/772267b1-c9ff-41b3-9e76-9ebb62f79b4e)
 
 
-Pour sécuriser **https://ai-insighter.ca** et résoudre le problème de "Non sécurisé", vous devez configurer correctement un certificat SSL/TLS valide pour ce domaine. Voici les étapes détaillées pour sécuriser ce site.
+- Pour sécuriser **https://ai-insighter.ca** et résoudre le problème de "Non sécurisé", vous devez configurer correctement un certificat SSL/TLS valide pour ce domaine. 
+- Voici les étapes détaillées pour sécuriser ce site.
 
 ---
 
-### **Étape 1 : Identifier la cause de "Non sécurisé"**
+# **Étape 1 : Identifier la cause de "Non sécurisé"**
 1. **Certificat SSL manquant ou mal configuré** :
    - Le domaine n'a pas de certificat SSL valide ou celui configuré ne couvre pas `ai-insighter.ca`.
    
@@ -21,12 +27,12 @@ Pour sécuriser **https://ai-insighter.ca** et résoudre le problème de "Non s�
 
 ---
 
-### **Étape 2 : Étapes pour sécuriser le domaine**
+# **Étape 2 : Étapes pour sécuriser le domaine**
 Voici comment configurer un certificat SSL/TLS pour résoudre ce problème :
 
 ---
 
-#### **Option 1 : Utiliser `bncert-tool` pour un certificat Let's Encrypt (Bitnami)**
+# **Option 1 : Utiliser `bncert-tool` pour un certificat Let's Encrypt (Bitnami)**
 
 1. **Exécutez `bncert-tool` sur votre serveur :**
    ```bash
@@ -48,7 +54,7 @@ Voici comment configurer un certificat SSL/TLS pour résoudre ce problème :
 
 ---
 
-#### **Option 2 : Utiliser un certificat Cloudflare Origin**
+# **Option 2 : Utiliser un certificat Cloudflare Origin**
 
 Si vous utilisez **Cloudflare**, voici les étapes pour sécuriser le domaine avec un certificat Cloudflare Origin.
 
@@ -80,7 +86,7 @@ Si vous utilisez **Cloudflare**, voici les étapes pour sécuriser le domaine av
 
 ---
 
-#### **Option 3 : Utiliser Certbot pour Let's Encrypt**
+# **Option 3 : Utiliser Certbot pour Let's Encrypt**
 
 1. **Installez Certbot** :
    ```bash
@@ -107,7 +113,7 @@ Si vous utilisez **Cloudflare**, voici les étapes pour sécuriser le domaine av
 
 ---
 
-### **Étape 3 : Vérifiez la redirection HTTPS**
+## **Étape 3 : Vérifiez la redirection HTTPS**
 Assurez-vous que toutes les requêtes HTTP redirigent automatiquement vers HTTPS. Vous pouvez ajouter cette configuration dans votre fichier `bitnami.conf` :
 
 ```apache
@@ -127,19 +133,19 @@ sudo /opt/bitnami/ctlscript.sh restart apache
 
 ---
 
-### **Étape 4 : Vérifiez et corrigez le contenu mixte**
+## **Étape 4 : Vérifiez et corrigez le contenu mixte**
 Si votre site charge des ressources via HTTP, modifiez leur URL pour les servir en HTTPS. Utilisez un outil comme [Why No Padlock?](https://www.whynopadlock.com/) pour identifier les ressources non sécurisées.
 
 ---
 
-### **Étape 5 : Tester le certificat et la sécurité**
+## **Étape 5 : Tester le certificat et la sécurité**
 1. Accédez à **https://ai-insighter.ca** dans un navigateur.
 2. Utilisez [SSL Labs](https://www.ssllabs.com/ssltest/) pour analyser votre configuration SSL/TLS.
 3. Vérifiez que votre site affiche un cadenas sécurisé.
 
 ---
 
-### **Résumé des solutions**
+## **Résumé des solutions**
 | **Solution**                     | **Avantages**                                           | **Inconvénients**                                       |
 |-----------------------------------|-------------------------------------------------------|-------------------------------------------------------|
 | **bncert-tool (Let's Encrypt)**   | Automatisé, intégré avec Bitnami.                     | Nécessite de désactiver temporairement Cloudflare.    |
@@ -148,11 +154,14 @@ Si votre site charge des ressources via HTTP, modifiez leur URL pour les servir 
 
 ---
 
-### **Recommandation**
+## **Recommandation**
 - Si vous utilisez **Cloudflare** : Optez pour un **Cloudflare Origin Certificate**.
 - Si vous voulez une gestion automatique avec Let's Encrypt : Essayez **bncert-tool** ou **Certbot**.
 
+
+----------------------
 # Annexe :
+----------------------
 
 
 
@@ -160,15 +169,15 @@ Si vous souhaitez **rediriger votre domaine `https://ai-insighter.ca`** vers un 
 
 ---
 
-### **Étape 1 : Configuration de la redirection dans Apache**
+## **Étape 1 : Configuration de la redirection dans Apache**
 Vous pouvez configurer une redirection permanente (301) dans le fichier Apache de votre serveur, généralement dans `bitnami.conf`.
 
-#### **1. Ouvrir le fichier Apache de configuration :**
+# **1. Ouvrir le fichier Apache de configuration :**
 ```bash
 sudo nano /opt/bitnami/apache/conf/bitnami/bitnami.conf
 ```
 
-#### **2. Ajouter la redirection pour le domaine `ai-insighter.ca` :**
+# **2. Ajouter la redirection pour le domaine `ai-insighter.ca` :**
 Recherchez la section HTTPS (port 443) ou créez un nouveau bloc dédié pour `ai-insighter.ca`. Ajoutez cette configuration :
 
 ```apache
@@ -187,7 +196,7 @@ Recherchez la section HTTPS (port 443) ou créez un nouveau bloc dédié pour `a
 
 ---
 
-### **Étape 2 : Forcer les requêtes HTTP (port 80) à rediriger vers HTTPS**
+## **Étape 2 : Forcer les requêtes HTTP (port 80) à rediriger vers HTTPS**
 Ajoutez également une redirection HTTP → HTTPS dans le fichier :
 
 ```apache
@@ -206,7 +215,7 @@ Ensuite, HTTPS redirigera vers `ai-insighter.com` comme configuré ci-dessus.
 
 ---
 
-### **Étape 3 : Redémarrer Apache pour appliquer les modifications**
+## **Étape 3 : Redémarrer Apache pour appliquer les modifications**
 Après avoir enregistré les modifications, redémarrez Apache :
 ```bash
 sudo /opt/bitnami/ctlscript.sh restart apache
@@ -214,14 +223,14 @@ sudo /opt/bitnami/ctlscript.sh restart apache
 
 ---
 
-### **Option 2 : Configuration de la redirection via Cloudflare**
+## **Option 2 : Configuration de la redirection via Cloudflare**
 Si vous utilisez **Cloudflare** pour gérer le DNS de votre domaine, vous pouvez configurer une redirection au niveau de Cloudflare sans toucher à votre serveur.
 
-#### **1. Accédez à votre tableau de bord Cloudflare :**
+# **1. Accédez à votre tableau de bord Cloudflare :**
 - Connectez-vous à [Cloudflare](https://www.cloudflare.com/).
 - Sélectionnez le domaine `ai-insighter.ca`.
 
-#### **2. Configurez une règle de redirection (Page Rules) :**
+# **2. Configurez une règle de redirection (Page Rules) :**
 1. Allez dans **Rules > Page Rules**.
 2. Cliquez sur **Create Page Rule**.
 3. Configurez la redirection comme suit :
@@ -233,7 +242,7 @@ Si vous utilisez **Cloudflare** pour gérer le DNS de votre domaine, vous pouvez
 
 ---
 
-### **Étape 4 : Tester la redirection**
+## **Étape 4 : Tester la redirection**
 1. Accédez à `http://ai-insighter.ca` ou `https://ai-insighter.ca`.
 2. Vérifiez que vous êtes redirigé automatiquement vers `https://ai-insighter.com`.
 
