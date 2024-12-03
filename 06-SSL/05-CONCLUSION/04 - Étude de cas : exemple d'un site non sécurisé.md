@@ -1,4 +1,4 @@
-# Étude de cas : exemple d'un site non sécurisé 
+## Étude de cas : exemple d'un site non sécurisé 
 
 # **Étude de cas : Comment rendre un site sécurisé et optimiser sa redirection HTTPS**
 
@@ -259,4 +259,6 @@ Si vous utilisez **Cloudflare** pour gérer le DNS de votre domaine, vous pouvez
 ### **Recommandation**
 - **Si vous utilisez Cloudflare** : La redirection via Cloudflare est la méthode la plus simple.
 - **Si vous voulez tout gérer sur le serveur** : Configurez une redirection via Apache.
+
+
 
