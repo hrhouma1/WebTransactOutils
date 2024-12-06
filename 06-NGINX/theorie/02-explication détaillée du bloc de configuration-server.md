@@ -133,3 +133,122 @@ Ce bloc `server` montre une configuration typique pour gérer des scénarios var
 - **Fallback par défaut** avec un répertoire général (`/`).
 
 En combinant ces blocs, NGINX peut répondre efficacement à divers types de requêtes, tout en optimisant les performances en servant les fichiers directement depuis le disque.
+
+
+# Annexe :
+
+
+
+
+### **1. Bloc `location = /exact`**
+**Rappel :** Ce bloc correspond uniquement à l'URI **exacte** `/exact`.
+
+#### **Exemple 1 : Retourner une réponse textuelle**
+```nginx
+location = /exact {
+    return 200 "This is an exact match response\n";
+}
+```
+- **Requête** : `http://example.com/exact`
+- **Résultat** : Renvoie une réponse HTTP avec le texte `This is an exact match response`.
+
+---
+
+#### **Exemple 2 : Servir un fichier spécifique**
+```nginx
+location = /exact {
+    root /var/www/html;
+    index exact.html;
+}
+```
+- **Requête** : `http://example.com/exact`
+- **Résultat** : Cherche le fichier `/var/www/html/exact.html` et le sert au client.
+
+---
+
+### **2. Bloc `location ^~ /static/`**
+**Rappel :** Ce bloc s'applique à toutes les requêtes commençant par `/static/` avec priorité élevée.
+
+#### **Exemple 1 : Servir des fichiers CSS**
+```nginx
+location ^~ /static/css/ {
+    root /var/www/static;
+}
+```
+- **Requête** : `http://example.com/static/css/style.css`
+- **Résultat** : Sert le fichier `/var/www/static/css/style.css`.
+
+---
+
+#### **Exemple 2 : Désactiver l'accès à certains fichiers**
+```nginx
+location ^~ /static/secret/ {
+    return 403;
+}
+```
+- **Requête** : `http://example.com/static/secret/file.txt`
+- **Résultat** : Retourne un code HTTP 403 (accès interdit) pour toute requête accédant au dossier `/static/secret/`.
+
+---
+
+### **3. Bloc `location ~* \.(jpg|jpeg|png|gif)$`**
+**Rappel :** Ce bloc correspond aux fichiers avec les extensions spécifiées, insensible à la casse.
+
+#### **Exemple 1 : Activer le cache des images**
+```nginx
+location ~* \.(jpg|jpeg|png|gif)$ {
+    root /var/www/images;
+    expires 30d;
+}
+```
+- **Requête** : `http://example.com/images/photo.JPG`
+- **Résultat** : Sert le fichier `/var/www/images/photo.JPG` et permet au navigateur de le mettre en cache pendant 30 jours.
+
+---
+
+#### **Exemple 2 : Bloquer les fichiers avec certaines extensions**
+```nginx
+location ~* \.(jpg|jpeg|png|gif)$ {
+    return 403;
+}
+```
+- **Requête** : `http://example.com/photo.jpg`
+- **Résultat** : Retourne un code HTTP 403 pour toutes les requêtes concernant les images.
+
+---
+
+### **4. Bloc `location /`**
+**Rappel :** Ce bloc traite toutes les requêtes restantes qui ne correspondent pas aux autres directives.
+
+#### **Exemple 1 : Configurer un répertoire par défaut**
+```nginx
+location / {
+    root /var/www/html;
+    index index.html;
+}
+```
+- **Requête** : `http://example.com/`
+- **Résultat** : Cherche le fichier `/var/www/html/index.html` et le sert au client.
+
+---
+
+#### **Exemple 2 : Rediriger toutes les requêtes vers un fichier unique**
+```nginx
+location / {
+    try_files $uri /index.html;
+}
+```
+- **Requête** : `http://example.com/unknown-page`
+- **Résultat** : Si le fichier correspondant à l'URI demandé n'existe pas, redirige vers `/index.html` (souvent utilisé pour les applications SPA).
+
+---
+
+### **Résumé des exemples**
+| **Bloc**                   | **Exemple 1**                               | **Exemple 2**                                 |
+|----------------------------|---------------------------------------------|----------------------------------------------|
+| **`location = /exact`**    | Retourner un texte simple                  | Servir un fichier spécifique                |
+| **`location ^~ /static/`** | Servir des fichiers CSS                    | Désactiver l'accès à certains fichiers       |
+| **`location ~* \.(...)$`** | Activer le cache pour les images           | Bloquer les fichiers avec certaines extensions |
+| **`location /`**           | Servir un fichier par défaut               | Rediriger vers un fichier unique (fallback)  |
+
+Ces exemples montrent comment personnaliser les comportements des blocs `location` selon vos besoins spécifiques.
