@@ -14,7 +14,6 @@ Ouvrez un terminal et exécutez les commandes suivantes pour mettre à jour votr
 
 ```bash
 sudo apt update
-sudo apt upgrade -y
 ```
 
 **1.2. Installer Nginx**
