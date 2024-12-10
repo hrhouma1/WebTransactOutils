@@ -46,7 +46,7 @@ Password: votre_mot_de_passe
 ssh root@votre_ip_vps
 ```
 
-# annexe : désactivation du root
+
 
 # Étape 3 : Création d'un utilisateur sécurisé
 ```bash
