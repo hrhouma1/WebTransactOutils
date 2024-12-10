@@ -3,7 +3,7 @@
 
 ### Étape 1 : Configuration des domaines
 Pour chaque domaine, ajoutez dans votre panel DNS :
-```
+``C
 Type    Nom    Valeur         TTL
 A       @      [Votre_IP]     3600
 A       www    [Votre_IP]     3600
