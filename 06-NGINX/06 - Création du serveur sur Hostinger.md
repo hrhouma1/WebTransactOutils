@@ -144,6 +144,12 @@ sudo chmod -R 755 /var/www/hrehouma.com
 sudo nano /var/www/hrehouma.com/public_html/index.html
 ```
 
+- Installez PHP et les extensions requises Ubuntu 2204 :
+
+```bash
+sudo apt install php-fpm php-mysql php-curl php-gd php-xml php-mbstring -y
+```
+
 Copiez ce code HTML de test :
 ```html
 <!DOCTYPE html>
