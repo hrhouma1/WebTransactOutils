@@ -1,6 +1,6 @@
 ## Création du serveur sur Hostinger
 
-### Étape 1 : Achat et Configuration
+# Étape 1 : Achat et Configuration
 1. Allez sur hostinger.fr
 2. Cliquez sur "VPS Hosting"
 3. Choisissez un plan (recommandé minimum) :
@@ -12,7 +12,7 @@
    * Région : Choisissez la plus proche de vous
    * Mot de passe : Créez un mot de passe fort
 
-### Étape 2 : Configuration DNS
+# Étape 2 : Configuration DNS
 1. Dans le panel Hostinger :
    * Menu → Domaines
    * Sélectionnez hrehouma.com
@@ -46,7 +46,7 @@ Password: votre_mot_de_passe
 ssh root@votre_ip_vps
 ```
 
-### Étape 3 : Création d'un utilisateur sécurisé
+# Étape 3 : Création d'un utilisateur sécurisé
 ```bash
 # Créez un nouvel utilisateur
 adduser votre_nom_utilisateur
