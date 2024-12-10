@@ -1,5 +1,5 @@
 
-### **Cours : Les En-têtes de Sécurité Web **
+### Cours : Les En-têtes de Sécurité Web
 
 ---
 
