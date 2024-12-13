@@ -30,7 +30,7 @@ add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; prelo
 **Explication des paramètres** :
 - **`max-age`** : Durée (en secondes) pendant laquelle le navigateur doit forcer HTTPS (1 an = 31 536 000 s).
 - **`includeSubDomains`** : Applique cette règle à tous les sous-domaines.
-- **`preload`** : Permet au domaine d’être ajouté à la liste HSTS Preload des navigateurs.
+- **`preload`** : Permet au domaine d’être ajouté à la liste HSTS Preload des navigateurs (voir annexe 01).
 
 **Bonnes pratiques** :  
 - Activez HSTS uniquement après avoir configuré correctement HTTPS sur votre site.  
@@ -197,3 +197,142 @@ add_header Permissions-Policy "geolocation=(), microphone=(), camera=()";
 - **Améliorer le SEO** : Les moteurs de recherche privilégient les sites sécurisés.
 
 En appliquant correctement ces en-têtes, vous passez d’un site vulnérable à un site résilient, prêt à répondre aux menaces modernes.
+
+
+# Annexe 01
+
+### **HSTS Preload : Ajout d'un Domaine à la Liste HSTS Preload des Navigateurs**
+
+#### **1. Qu'est-ce que HSTS (HTTP Strict Transport Security) ?**
+HSTS est un mécanisme de sécurité web qui force les navigateurs à utiliser **exclusivement HTTPS** pour se connecter à un domaine, empêchant ainsi les connexions HTTP non sécurisées. Cela protège contre des attaques comme le **man-in-the-middle (MITM)** et le **downgrade attack** où un attaquant force une connexion HTTP non sécurisée.
+
+---
+
+#### **2. Qu'est-ce que la Liste HSTS Preload ?**
+La liste **HSTS Preload** est une base de données maintenue par les navigateurs (comme Chrome, Firefox, Edge, Safari, etc.) qui contient les domaines configurés pour **toujours** utiliser HTTPS, même lors de la première connexion d'un utilisateur.
+
+- **Problème sans Preload :**
+  Lors de la première visite d'un utilisateur sur un domaine, si celui-ci accède via HTTP, il est vulnérable à une attaque MITM avant que HSTS ne soit appliqué. 
+- **Solution avec Preload :**
+  En ajoutant un domaine à la liste HSTS Preload, le navigateur sait **dès le départ** que seules les connexions HTTPS sont autorisées, éliminant toute possibilité de connexion HTTP initiale.
+
+---
+
+#### **3. Conditions pour Activer HSTS Preload**
+Pour qu'un domaine soit ajouté à la liste HSTS Preload, il doit respecter certaines exigences strictes définies par les navigateurs. Voici ces exigences :
+
+1. **HSTS doit être activé sur le domaine principal** (et ses sous-domaines) :
+   - Exemple de configuration dans **NGINX** :
+     ```nginx
+     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+     ```
+   - **Détails des directives :**
+     - `max-age=31536000` : Définit la durée (en secondes) pendant laquelle HSTS est actif (1 an ici).
+     - `includeSubDomains` : Applique la politique HSTS à tous les sous-domaines du domaine principal.
+     - `preload` : Indique que le domaine doit être ajouté à la liste HSTS Preload.
+
+2. **Le domaine principal et tous ses sous-domaines doivent être accessibles via HTTPS uniquement.**
+   - Aucune connexion HTTP ne doit être possible.
+
+3. **Certificat SSL/TLS valide et bien configuré :**
+   - Le domaine doit utiliser un certificat valide, émis par une autorité de certification reconnue.
+
+4. **Redirection automatique de HTTP vers HTTPS :**
+   - Toute requête HTTP doit être redirigée vers HTTPS :
+     ```nginx
+     server {
+         listen 80;
+         server_name example.com;
+         return 301 https://example.com$request_uri;
+     }
+     ```
+
+5. **Le domaine ne doit pas contenir de sous-domaines non sécurisés :**
+   - Par exemple, `sub.example.com` doit aussi être configuré pour HTTPS et HSTS si `includeSubDomains` est utilisé.
+
+---
+
+#### **4. Comment Ajouter un Domaine à la Liste HSTS Preload ?**
+
+1. **Configurer le serveur avec HSTS Preload :**
+   - Ajoutez la directive `preload` à la politique HSTS comme montré précédemment.
+
+2. **Tester la configuration :**
+   - Utilisez l'outil de vérification officiel pour s'assurer que votre domaine respecte les exigences :  
+     [https://hstspreload.org](https://hstspreload.org)
+
+3. **Soumettre le domaine :**
+   - Si tout est correct, soumettez votre domaine via le formulaire sur [hstspreload.org](https://hstspreload.org).
+
+4. **Processus de validation :**
+   - Les mainteneurs de la liste vérifient que votre domaine respecte les critères avant de l’ajouter.
+
+5. **Propagation aux navigateurs :**
+   - Une fois ajouté, votre domaine apparaîtra dans la liste HSTS Preload incluse dans les navigateurs. Cela peut prendre quelques semaines.
+
+---
+
+#### **5. Points Importants à Considérer**
+
+1. **Engagement à long terme :**
+   - Une fois qu’un domaine est ajouté à la liste HSTS Preload, il est très difficile de l’en retirer. Cela signifie que toutes les connexions doivent rester en HTTPS pour toujours.
+
+2. **Risques potentiels :**
+   - Si le domaine ou un sous-domaine devient inaccessible via HTTPS (par exemple, certificat expiré), cela entraînera des erreurs critiques pour les utilisateurs.
+
+3. **Meilleures pratiques :**
+   - Toujours renouveler les certificats SSL/TLS à temps.
+   - Vérifier régulièrement que tous les sous-domaines sont conformes à la politique HTTPS.
+
+---
+
+#### **6. Avantages d'utiliser la Liste HSTS Preload**
+1. **Sécurité renforcée :**
+   - Élimine totalement le risque d’une connexion HTTP initiale non sécurisée.
+2. **Confiance des utilisateurs :**
+   - Les utilisateurs sont assurés que leurs données sont protégées.
+3. **Conformité :**
+   - Répond aux exigences des normes modernes de sécurité web.
+
+---
+
+#### **Exemple Complet : Configuration NGINX pour HSTS Preload**
+
+Voici une configuration complète pour un domaine avec HSTS Preload dans NGINX :
+
+```nginx
+server {
+    listen 443 ssl;
+    server_name example.com www.example.com;
+
+    ssl_certificate /etc/nginx/ssl/example.com.crt;
+    ssl_certificate_key /etc/nginx/ssl/example.com.key;
+
+    # Activer HSTS avec Preload
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+
+    root /var/www/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+server {
+    listen 80;
+    server_name example.com www.example.com;
+
+    # Redirection HTTP vers HTTPS
+    return 301 https://$host$request_uri;
+}
+```
+
+---
+
+#### **7. Résumé**
+- **HSTS Preload** garantit que les navigateurs exigent une connexion HTTPS dès le premier contact avec un domaine.
+- Il est particulièrement utile pour éliminer les risques associés à la connexion initiale en HTTP.
+- Une configuration correcte de HSTS avec `preload` est essentielle avant de soumettre le domaine.
+
+Ce mécanisme est devenu un standard dans la sécurisation des sites web modernes.
