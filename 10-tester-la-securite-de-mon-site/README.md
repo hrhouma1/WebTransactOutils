@@ -1,3 +1,4 @@
  - https://securityheaders.com/?q=https%3A%2F%2Fenloja.ca%2F&followRedirects=on
  - https://www.ssllabs.com/ssltest/
  - https://www.ssllabs.com/
+ - https://www.fortiguard.com/faq/appctrlsubmit
