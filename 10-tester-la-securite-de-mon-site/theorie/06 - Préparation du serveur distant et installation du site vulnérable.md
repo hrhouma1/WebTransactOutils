@@ -1,7 +1,7 @@
 # Sur le serveur Ubuntu 
 
 # Informations utilisées:
-- user : root
+- user : demoutilisateur
 - password : Mdp@Ass3zSécuris3
 
 ---------
