@@ -1,4 +1,10 @@
-# Attaque XSS
+# 🔥 **Attaques XSS : Quand une simple ligne de code peut faire dérailler des millions d’utilisateurs** 💻  
+
+---
+
+> **💡 Découvrez comment une faille XSS peut transformer votre site en cible, détourner vos utilisateurs ou exposer leurs données.**  
+> **Parce qu’en cybersécurité, la moindre ligne oubliée peut coûter cher.** 🚨  
+
 
 ---
 
