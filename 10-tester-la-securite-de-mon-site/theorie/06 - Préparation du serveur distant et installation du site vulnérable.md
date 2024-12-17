@@ -4,6 +4,8 @@
 - user : demoutilisateur
 - password : Mdp@Ass3zSécuris3
 
+![image](https://github.com/user-attachments/assets/f00d238c-5e7f-4286-a5b7-dd3c9461ca29)
+
 ---------
 # 01 - Préparation du serveur distant et installation des prérequis
 ---------
