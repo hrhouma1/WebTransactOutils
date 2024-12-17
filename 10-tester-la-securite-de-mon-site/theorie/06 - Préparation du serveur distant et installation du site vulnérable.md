@@ -134,8 +134,15 @@ http://adresse_ip_serveur/demo
 ```
 http://46.202.178.98/demo
 http://46.202.178.98/phpmyadmin/
+http://46.202.178.98/demo/admin/
+http://46.202.178.98/demo/article.php?id=1
+```
+
+```
 https://latestworlds.com/demo
 https://latestworlds.com/phpmyadmin/
+http://latestworlds.com/demo/admin/
+http://latestworlds.com/demo/article.php?id=1
 ```
 
 3. En cas de problème, vérifiez les logs :
