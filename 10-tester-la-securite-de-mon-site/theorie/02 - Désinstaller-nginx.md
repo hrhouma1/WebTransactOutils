@@ -4,7 +4,7 @@ Pour désinstaller **Nginx** sur **Ubuntu 22.04**, suivez ces étapes :
 
 ---
 
-### **1. Arrêter le service Nginx**
+# **1. Arrêter le service Nginx**
 Avant de désinstaller Nginx, arrêtez son service.  
 ```bash
 sudo systemctl stop nginx
@@ -12,7 +12,7 @@ sudo systemctl stop nginx
 
 ---
 
-### **2. Désactiver Nginx au démarrage**
+# **2. Désactiver Nginx au démarrage**
 Désactivez Nginx pour qu’il ne démarre plus automatiquement.  
 ```bash
 sudo systemctl disable nginx
@@ -20,7 +20,7 @@ sudo systemctl disable nginx
 
 ---
 
-### **3. Désinstaller Nginx**
+# **3. Désinstaller Nginx**
 Pour supprimer Nginx, exécutez cette commande :  
 ```bash
 sudo apt remove --purge nginx nginx-common -y
@@ -29,7 +29,7 @@ sudo apt remove --purge nginx nginx-common -y
 
 ---
 
-### **4. Supprimer les fichiers restants**
+# **4. Supprimer les fichiers restants**
 Vérifiez s’il reste des fichiers de configuration dans `/etc/nginx` et supprimez-les si nécessaire.  
 ```bash
 sudo rm -rf /etc/nginx
@@ -37,7 +37,7 @@ sudo rm -rf /etc/nginx
 
 ---
 
-### **5. Nettoyer les dépendances inutilisées**
+# **5. Nettoyer les dépendances inutilisées**
 Supprimez les paquets et dépendances inutiles liés à Nginx.  
 ```bash
 sudo apt autoremove -y
@@ -46,13 +46,11 @@ sudo apt autoclean
 
 ---
 
-### **6. Vérifier la suppression**
+# **6. Vérifier la suppression**
 Assurez-vous que Nginx est bien désinstallé.  
 ```bash
 nginx -v
 ```
-Si Nginx est désinstallé correctement, la commande retournera une erreur indiquant que **nginx** n’est pas trouvé.
 
----
-
-Nginx est maintenant désinstallé de votre serveur Ubuntu 22.04. 🚀
+- Si Nginx est désinstallé correctement, la commande retournera une erreur indiquant que **nginx** n’est pas trouvé.
+- Nginx est maintenant désinstallé de votre serveur Ubuntu 22.04. 🚀
