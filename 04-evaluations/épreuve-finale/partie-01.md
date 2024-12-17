@@ -4,7 +4,6 @@
 **Instructions :**  
 - Chaque question possède **une seule réponse correcte**.  
 - Lisez attentivement chaque réponse. Certaines peuvent sembler correctes, mais il y a **des pièges**.  
-- Justifiez vos réponses pour montrer votre compréhension des concepts abordés.  
 
 
 
