@@ -3,7 +3,13 @@
 
 # 1 - Qu'est-ce que l'injection SQL?
 
+![3d-coronavirus-vaccine-vials-syringe](https://github.com/user-attachments/assets/a09dc28c-5187-4e44-b1ac-90c76e4cb4ab)
+
 L'injection SQL est une technique de piratage qui permet à un attaquant d'exécuter des commandes SQL malveillantes en manipulant les entrées d'une application. Cela peut permettre d'accéder à des données sensibles, de modifier ou de supprimer des informations dans la base de données.
+
+![injection](https://github.com/user-attachments/assets/04411d65-9c89-4588-9ec2-aa18f0d39f4b)
+
+
 
 # 2 -  Exemple de l'injection SQL
 
