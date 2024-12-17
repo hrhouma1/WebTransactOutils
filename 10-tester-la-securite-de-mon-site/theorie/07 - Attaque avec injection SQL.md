@@ -179,7 +179,23 @@ Résultat :
 |----|----------------|----------|
 | 0  | Motdepasse123  | 2        |
 
-Le mot de passe de l'administrateur est `Motdepasse123`.
+
+
+## 2.7. Obtenir le mot de passe de l'administrateur
+
+![image](https://github.com/user-attachments/assets/bc3608ec-1077-4421-88d5-d0cc2bc79cde)
+
+![image](https://github.com/user-attachments/assets/5ef8d1c5-525f-44f7-85c3-cf07bf5e7f5a)
+
+Le hash du mot de passe de l'administrateur est `ab4f63f9ac65152575886860dde480a1`.
+
+![image](https://github.com/user-attachments/assets/b4ce0da6-7921-475b-b6ad-7e1d13ca4f32)
+
+Le mot de passe de l'administrateur est `azerty`.
+
+![image](https://github.com/user-attachments/assets/03aa570a-3790-41f7-a3fb-067b8396f4da)
+
+
 
 ## Sécurité et Prévention
 
