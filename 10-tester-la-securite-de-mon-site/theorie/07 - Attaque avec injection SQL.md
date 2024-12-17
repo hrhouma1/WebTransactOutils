@@ -7,7 +7,7 @@
 
 L'injection SQL est une technique de piratage qui permet à un attaquant d'exécuter des commandes SQL malveillantes en manipulant les entrées d'une application. Cela peut permettre d'accéder à des données sensibles, de modifier ou de supprimer des informations dans la base de données.
 
-![injection](https://github.com/user-attachments/assets/04411d65-9c89-4588-9ec2-aa18f0d39f4b)
+
 
 
 
@@ -19,6 +19,8 @@ L'injection SQL est une technique de piratage qui permet à un attaquant d'exéc
 ```sql
 ' OR 1=1 #
 ```
+
+![injection](https://github.com/user-attachments/assets/04411d65-9c89-4588-9ec2-aa18f0d39f4b)
 
 **Explication :**
 - **Contexte:** Supposons que vous avez un formulaire de connexion avec deux champs : nom d'utilisateur et mot de passe.
